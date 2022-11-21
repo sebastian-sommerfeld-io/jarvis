@@ -1,0 +1,4 @@
+= __COMPONENT_TITLE__
+include::ROOT:partial$vars.adoc[]
+
+include::ROOT:partial$README.adoc[]
