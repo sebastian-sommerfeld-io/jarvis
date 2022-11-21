@@ -3,7 +3,11 @@
 # @brief Install jarvis to ``/opt/jarvis`` and make executable via ``/usr/bin/jarvis``.
 #
 # @description The script installs jarvis to ``/opt/jarvis`` and makes jarvis executable via ``/usr/bin/jarvis``.
-# All jarvis assets are cloned from Github during the installation. To update
+# All jarvis assets are cloned from Github during the installation. To update the installation, just run this
+# script again.
+#
+# CAUTION: Be aware that running this script might result in conflicts with other (unrelated) software packages
+# of the same name because /usr/bin/jarvis might belong to something else.
 #
 # === Script Arguments
 #
