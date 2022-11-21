@@ -37,7 +37,7 @@ sudo rm -rf "$BIN"
 
 
 echo -e "$LOG_INFO Clone Jarvis Repository"
-git clone git@github.com:sebastian-sommerfeld-io/jarvis.git "$TEMP_PATH"
+git clone https://github.com/sebastian-sommerfeld-io/jarvis.git "$TEMP_PATH"
 sudo mv "$TEMP_PATH" "$REPO_PATH"
 
 echo -e "$LOG_INFO Clone Jarvis Repository"
