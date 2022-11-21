@@ -47,7 +47,7 @@ jobs:
       - name: README.adoc
         uses: sebastian-sommerfeld-io/github-action-generate-readme@main
         with:
-          caption: Configurations Startpage
+          caption: Jarvis CLI
       - name: Commit and push
         uses: EndBug/add-and-commit@v9
         with:
