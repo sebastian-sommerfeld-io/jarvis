@@ -3,7 +3,7 @@
 # @brief Install jarvis to ``/opt/jarvis`` and make executable via ``/usr/bin/jarvis``.
 #
 # @description The script installs jarvis to ``/opt/jarvis`` and makes jarvis executable via ``/usr/bin/jarvis``.
-# All jarvis assets are cloned from Github during the installation.
+# All jarvis assets are cloned from Github during the installation. To update
 #
 # === Script Arguments
 #
@@ -28,6 +28,12 @@ set -o nounset
 TEMP_PATH="/tmp/jarvis"
 REPO_PATH="/opt/jarvis"
 BIN="/usr/bin/jarvis"
+
+
+echo -e "$LOG_INFO Run preparations"
+sudo rm -rf "$TEMP_PATH"
+sudo rm -rf "$REPO_PATH"
+sudo rm -rf "$BIN"
 
 
 echo -e "$LOG_INFO Clone Jarvis Repository"
