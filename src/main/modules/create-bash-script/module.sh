@@ -1,5 +1,5 @@
 #!/bin/bash
-# @file jarvis.sh
+# @file module.sh
 # @brief Jarvis module to create a new bash script and apply basic config.
 #
 # @description The module creates a new bash script and apply basic config. The script contains basic
