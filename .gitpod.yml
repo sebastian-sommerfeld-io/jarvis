@@ -1,3 +1,4 @@
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
-tasks:
-  - init: curl https://raw.githubusercontent.com/sebastian-sommerfeld-io/jarvis/main/src/main/install.sh | bash -
+tasks:  
+  - name: Install jarvis
+    init: curl https://raw.githubusercontent.com/sebastian-sommerfeld-io/jarvis/main/src/main/install.sh | bash -
