@@ -3,5 +3,4 @@
 * xref:AUTO-GENERATED:bash-docs/src/main/modules/create-bash-script/assets/template-sh.adoc[src/main/modules/create-bash-script/assets/template.sh]
 * xref:AUTO-GENERATED:bash-docs/src/main/modules/create-bash-script/module-sh.adoc[src/main/modules/create-bash-script/module.sh]
 * xref:AUTO-GENERATED:bash-docs/src/main/modules/ssh-create-keypair/module-sh.adoc[src/main/modules/ssh-create-keypair/module.sh]
-* xref:AUTO-GENERATED:bash-docs/src/main/modules/environment-information/module-sh.adoc[src/main/modules/environment-information/module.sh]
 * xref:AUTO-GENERATED:bash-docs/src/main/modules/init-antora-component/module-sh.adoc[src/main/modules/init-antora-component/module.sh]
