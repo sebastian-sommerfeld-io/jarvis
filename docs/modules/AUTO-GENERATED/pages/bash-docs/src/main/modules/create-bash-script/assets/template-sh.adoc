@@ -27,5 +27,5 @@ The script does not accept any parameters.
 [source, bash]
 
 ----
-jarvis
+./__FILENAME__
 ----
