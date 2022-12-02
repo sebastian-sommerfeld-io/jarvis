@@ -13,7 +13,7 @@
 #
 # [source, bash]
 # ```
-# jarvis
+# ./__FILENAME__
 # ```
 
 
