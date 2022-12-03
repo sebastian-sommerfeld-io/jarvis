@@ -1,8 +1,8 @@
 #!/bin/bash
 # @file jarvis.sh
-# @brief Jarvis module to create a new Antora module.
+# @brief Jarvis module to create a new Antora component.
 #
-# @description The module creates a new Antora module and a README.adoc.
+# @description The module creates a new Antora component and a README.adoc.
 #
 # NOTE: Don't run this script directly! Always run the ``jarvis`` command and select the module of choice.
 #
