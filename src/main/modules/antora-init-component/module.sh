@@ -29,17 +29,17 @@ if [ -z "$1" ]; then
   echo -e "$LOG_ERROR exit" && exit 8
 fi
 
-echo -e "$LOG_INFO Enter module title:"
+echo -e "$LOG_INFO Enter component title:"
 read -r COMPONENT_TITLE
 
-echo -e "$LOG_INFO Enter module name (url slug):"
+echo -e "$LOG_INFO Enter component name (url slug):"
 read -r COMPONENT_NAME
 
 echo -e "$LOG_INFO Enter Github project name (without path)"
 read -r GITHUB_PROJECT_NAME
 
 
-echo -e "$LOG_INFO Create Antora module"
+echo -e "$LOG_INFO Create Antora component"
 echo -e "$LOG_INFO Current workdir = $(pwd)"
 
 echo -e "$LOG_INFO Copy Antora template"
