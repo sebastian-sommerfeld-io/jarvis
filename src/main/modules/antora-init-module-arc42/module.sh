@@ -1,8 +1,8 @@
 #!/bin/bash
 # @file jarvis.sh
-# @brief Jarvis module to create a new Antora component.
+# @brief Jarvis module to create a new Antora module.
 #
-# @description The module creates a new Antora component and a README.adoc.
+# @description The module creates a new Antora module containing an Arc42 template (asciidoc files).
 #
 # NOTE: Don't run this script directly! Always run the ``jarvis`` command and select the module of choice.
 #
@@ -33,6 +33,6 @@ echo -e "$LOG_INFO Add Arc42 module"
 echo -e "$LOG_INFO Current workdir = $(pwd)"
 
 echo -e "$LOG_INFO Copy Antora template"
-cp -a "$1/assets/arc42-docs" "arc42-docs"
+cp -a "$1/assets/antora-modules/arc42-docs" "arc42-docs"
 
 echo -e "$LOG_WARN TODO: Add module to antora.yml"
