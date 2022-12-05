@@ -36,4 +36,5 @@ echo -e "$LOG_INFO Current workdir = $(pwd)"
 
 echo -e "$LOG_INFO Copy workflows and workflow assets"
 cp -a "$1/assets/workflows/assets" "assets"
-cp "$1/assets/workflows/organize.yml" "organize.yml"
+cp "$1/assets/workflows/organize-auto-close-issues.yml" "organize-auto-close-issues.yml"
+cp "$1/assets/workflows/organize-labels.yml" "organize-labels.yml"
