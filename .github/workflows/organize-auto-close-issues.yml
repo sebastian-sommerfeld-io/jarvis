@@ -13,7 +13,7 @@ name: "Organize: Auto-Close Issues"
 
 on:
   schedule:
-    - cron: '30 6 * * 1' # https://crontab.guru/#30_6_*_*_1
+    - cron: '40 6 * * 1' # https://crontab.guru/#40_6_*_*_1
 
 permissions:
   contents: read
