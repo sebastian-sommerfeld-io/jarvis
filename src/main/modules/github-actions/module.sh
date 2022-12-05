@@ -2,9 +2,9 @@
 # @file module.sh
 # @brief Jarvis module to create default (static) github actions.
 #
-# @description The module creates default github actions. Make sure to run this command from your
-# ``.github/workflows`` folder. The module only creates static workflows which are exactly the same for all
-# repositories.
+# @description The module creates default github actions and issue templates. Make sure to run this
+# command from the ``.github`` folder in your project. The module only creates static workflows which
+# are exactly the same for all repositories.
 #
 # NOTE: Don't run this script directly! Always run the ``jarvis`` command and select the module of choice.
 #
@@ -34,7 +34,14 @@ fi
 echo -e "$LOG_INFO Add default github action workflows"
 echo -e "$LOG_INFO Current workdir = $(pwd)"
 
-echo -e "$LOG_INFO Copy workflows and workflow assets"
-cp -a "$1/assets/workflows/assets" "assets"
-cp "$1/assets/workflows/organize-auto-close-issues.yml" "organize-auto-close-issues.yml"
-cp "$1/assets/workflows/organize-labels.yml" "organize-labels.yml"
+echo -e "$LOG_INFO Copy pull request template"
+cp "$1/assets/PULL_REQUEST_TEMPLATE.md" "PULL_REQUEST_TEMPLATE.md"
+
+(
+  cd workflows || exit
+
+  echo -e "$LOG_INFO Copy workflows and workflow assets"
+  cp -a "$1/assets/workflows/assets" "assets"
+  cp "$1/assets/workflows/organize-auto-close-issues.yml" "organize-auto-close-issues.yml"
+  cp "$1/assets/workflows/organize-labels.yml" "organize-labels.yml"
+)
