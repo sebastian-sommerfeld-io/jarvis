@@ -1,5 +1,5 @@
 #!/bin/bash
-# @file jarvis.sh
+# @file module.sh
 # @brief Jarvis module to create a new Antora module.
 #
 # @description The module creates a new Antora module containing an Arc42 template (asciidoc files).

@@ -1,5 +1,5 @@
 #!/bin/bash
-# @file jarvis.sh
+# @file module.sh
 # @brief Jarvis module to create default (static) github actions.
 #
 # @description The module creates default github actions. Make sure to run this command from your
