@@ -15,7 +15,7 @@ Jarvis module to create default (static) github actions.
 == Overview
 
 The module creates default github actions. Make sure to run this command from your
-`.github` folder. The module only creates static workflows which are exactly the same for all
+`.github/workflows` folder. The module only creates static workflows which are exactly the same for all
 repositories.
 
 NOTE: Don't run this script directly! Always run the `jarvis` command and select the module of choice.
