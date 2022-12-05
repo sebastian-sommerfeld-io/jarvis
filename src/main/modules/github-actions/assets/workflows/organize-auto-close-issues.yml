@@ -38,7 +38,7 @@ jobs:
 
   on-failure:
     runs-on: ubuntu-latest
-    needs: ['auto-close-cancelled']
+    needs: ['auto-close-issues']
     if: failure()
 
     steps:
