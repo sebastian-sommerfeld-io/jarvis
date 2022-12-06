@@ -20,7 +20,7 @@ permissions:
   contents: read
   issues: write
   # pull-requests: write
-  # repository-projects: write
+  repository-projects: write
 
 jobs:
   add-to-project:
