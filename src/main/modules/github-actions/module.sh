@@ -54,4 +54,5 @@ cp "$1/assets/PULL_REQUEST_TEMPLATE.md" "PULL_REQUEST_TEMPLATE.md"
   cp -a "$1/assets/workflows/assets" "assets"
   cp "$1/assets/workflows/organize-auto-close-issues.yml" "organize-auto-close-issues.yml"
   cp "$1/assets/workflows/organize-labels.yml" "organize-labels.yml"
+  cp "$1/assets/workflows/organize-assign-issues.yml" "organize-assign-issues.yml"
 )
