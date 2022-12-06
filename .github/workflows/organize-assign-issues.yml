@@ -30,7 +30,7 @@ jobs:
       - name: Add card to project
         uses: peter-evans/create-or-update-project-card@v2
         with:
-          project-location: users/sebastian-sommerfeld-io
+          project-location: sebastian-sommerfeld-io
           project-number: 1
           column-name: Backlog
           issue-number: ${{ github.event.number }}
