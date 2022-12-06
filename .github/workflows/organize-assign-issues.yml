@@ -20,6 +20,7 @@ permissions:
   contents: read
   issues: write
   # pull-requests: write
+  repository-projects: write
 
 jobs:
   add-to-project:
@@ -30,7 +31,7 @@ jobs:
         uses: actions/add-to-project@main
         with:
           project-url: https://github.com/users/sebastian-sommerfeld-io/projects/1
-          github-token: ${{ secrets.GH_TOKEN_REPO_AND_PROJECT }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
   on-failure:
     runs-on: ubuntu-latest
