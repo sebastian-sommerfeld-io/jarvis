@@ -20,22 +20,17 @@ permissions:
   contents: read
   issues: write
   # pull-requests: write
-  repository-projects: write
-  statuses: write
 
 jobs:
   add-to-project:
     name: Add to project
     runs-on: ubuntu-latest
     steps:
-      - name: Add card to project
-        uses: peter-evans/create-or-update-project-card@v2
+      - name: Add to project
+        uses: actions/add-to-project@main
         with:
-          project-location: sebastian-sommerfeld-io
-          project-number: 1
-          column-name: Backlog
-          issue-number: ${{ github.event.number }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+          project-url: https://github.com/users/sebastian-sommerfeld-io/projects/1
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
   on-failure:
     runs-on: ubuntu-latest
