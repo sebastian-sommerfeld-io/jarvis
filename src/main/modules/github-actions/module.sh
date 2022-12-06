@@ -6,7 +6,7 @@
 # command from the ``.github`` folder in your project. The module only creates static workflows which
 # are exactly the same for all repositories.
 #
-# NOTE: Don't run this script directly! Always run the ``jarvis`` command and select the module of choice.
+# NOTE: Don't run this script current_directly! Always run the ``jarvis`` command and select the module of choice.
 #
 # === Script Arguments
 #
@@ -26,13 +26,24 @@ set -o nounset
 # set -o xtrace
 
 
+DIR=".github"
+
+
 if [ -z "$1" ]; then
   echo -e "$LOG_ERROR Param missing: module path"
   echo -e "$LOG_ERROR exit" && exit 8
 fi
 
 echo -e "$LOG_INFO Add default github action workflows"
-echo -e "$LOG_INFO Current workdir = $(pwd)"
+echo -e "$LOG_INFO Current workcurrent_dir = $(pwd)"
+
+current_dir="$(pwd)"
+current_dir="${current_dir##*/}"
+echo -e "$LOG_INFO $current_dir"
+if [ "$current_dir" != "$DIR" ]; then
+  echo -e "$LOG_ERROR The current directory is expected to be $Y$DIR$D ... Instead detected $Y$current_dir$D"
+  echo -e "$LOG_ERROR exit" && exit 8
+fi
 
 echo -e "$LOG_INFO Copy pull request template"
 cp "$1/assets/PULL_REQUEST_TEMPLATE.md" "PULL_REQUEST_TEMPLATE.md"
