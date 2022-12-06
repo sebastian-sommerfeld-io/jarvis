@@ -1,5 +1,5 @@
 ---
-name: "Organize: Assign Issues & PRs"
+name: "Organize: Assign Issues"
 
 # +-------------------------------------------+
 # |                                           |
@@ -19,8 +19,9 @@ on:
 permissions:
   contents: read
   issues: write
-  pull-requests: write
-  # repository-projects: write
+  # pull-requests: write
+  repository-projects: write
+  statuses: write
 
 jobs:
   add-to-project:
@@ -30,10 +31,11 @@ jobs:
       - name: Add card to project
         uses: peter-evans/create-or-update-project-card@v2
         with:
-          project-location: users/sebastian-sommerfeld-io
+          project-location: sebastian-sommerfeld-io
           project-number: 1
           column-name: Backlog
           issue-number: ${{ github.event.number }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
   on-failure:
     runs-on: ubuntu-latest

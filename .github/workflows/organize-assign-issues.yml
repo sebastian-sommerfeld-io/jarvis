@@ -1,5 +1,5 @@
 ---
-name: "Organize: Assign Issues & PRs"
+name: "Organize: Assign Issues"
 
 # +-------------------------------------------+
 # |                                           |
@@ -21,6 +21,7 @@ permissions:
   issues: write
   # pull-requests: write
   repository-projects: write
+  statuses: write
 
 jobs:
   add-to-project:
@@ -34,6 +35,7 @@ jobs:
           project-number: 1
           column-name: Backlog
           issue-number: ${{ github.event.number }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
   on-failure:
     runs-on: ubuntu-latest
