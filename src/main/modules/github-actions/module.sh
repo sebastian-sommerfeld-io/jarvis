@@ -39,7 +39,6 @@ echo -e "$LOG_INFO Current workcurrent_dir = $(pwd)"
 
 current_dir="$(pwd)"
 current_dir="${current_dir##*/}"
-echo -e "$LOG_INFO $current_dir"
 if [ "$current_dir" != "$DIR" ]; then
   echo -e "$LOG_ERROR The current directory is expected to be $Y$DIR$D ... Instead detected $Y$current_dir$D"
   echo -e "$LOG_ERROR exit" && exit 8
