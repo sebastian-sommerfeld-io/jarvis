@@ -8,7 +8,7 @@ image:{github-actions-url}/{job-ci}/{badge}[Github Badge, link={github-actions-u
 * Where to file issues -> {url-project}/issues
 
 == About this project
-This project assists with daily Bash command and helps reducing time and overhead by automating some simple tasks like initializing a new link:https://antora.org[Antora] module.
+This project assists with daily tasks and helps reducing time and overhead by automating some simple tasks like initializing a new link:https://antora.org[Antora] component.
 
 Jarvis uses a modular achitecture to add new featues. This allows every module to choose the toolset on its own (Plain Bash scripts, Docker, Groovy, ...) as long as it is started by a Bash command.
 
