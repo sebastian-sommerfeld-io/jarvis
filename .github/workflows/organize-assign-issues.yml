@@ -46,10 +46,10 @@ jobs:
         uses: pozil/auto-assign-issue@v1
         # https://github.com/marketplace/actions/auto-assign-issue
         with:
-          # assignees: ${{ github.actor }}
-          assignees: sebastian-sommerfeld-io 
+          assignees: ${{ github.actor }}
+          # assignees: sebastian-sommerfeld-io 
           numOfAssignee: 1
-          allowSelfAssign: false
+          allowSelfAssign: true
           abortIfPreviousAssignees: true
 
   on-failure:
