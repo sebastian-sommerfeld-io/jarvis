@@ -37,6 +37,8 @@ jobs:
 
   assign-to-user:
     name: Assign to user
+    # not for pull requests
+    if: ${{ !github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     steps:
       - name: Debug output
