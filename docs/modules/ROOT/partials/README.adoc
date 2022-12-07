@@ -15,7 +15,7 @@ Jarvis uses a modular achitecture to add new featues. This allows every module t
 == How to use this project
 To install this project simply use the bootstrap script `curl https://raw.githubusercontent.com/sebastian-sommerfeld-io/jarvis/main/src/main/install.sh | bash -`.
 
-To use this project, just use the `jarvis` command from your bash.
+To use this project, just run the `jarvis` command from your bash.
 
 NOTE: Keep in mind that this project was developed for Ubuntu.
 
