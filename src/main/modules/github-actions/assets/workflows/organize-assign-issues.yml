@@ -29,22 +29,22 @@ jobs:
     name: Add to project
     runs-on: ubuntu-latest
     steps:
-      - name: Add to project
+      - name: Add to project (issues and PRs)
         uses: actions/add-to-project@main
         with:
           project-url: https://github.com/users/sebastian-sommerfeld-io/projects/1
           github-token: ${{ secrets.GH_TOKEN_REPO_AND_PROJECT }}
 
-  assign-to-user:
+  assign-issue-to-user:
     name: Assign to user
+    # todo IF moved into "In Progress" -> update triggers too
     # not for pull requests
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - name: Debug output
         run: echo "${{ github.actor }}"
-      - name: Assign to user
-        # todo IF moved into "In Progress" -> update triggers too
+      - name: Assign issue to user
         uses: pozil/auto-assign-issue@v1
         # https://github.com/marketplace/actions/auto-assign-issue
         with:
@@ -55,7 +55,7 @@ jobs:
 
   on-failure:
     runs-on: ubuntu-latest
-    needs: ['add-to-project', 'assign-to-user']
+    needs: ['add-to-project', 'assign-issue-to-user']
     if: failure()
 
     steps:
