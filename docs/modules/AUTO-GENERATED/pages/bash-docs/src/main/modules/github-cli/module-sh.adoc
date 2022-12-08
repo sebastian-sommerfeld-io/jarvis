@@ -56,7 +56,7 @@ gh --version
 
 ==== Arguments
 
-* *...* (String): The ansible-playbook commands (1-n arguments) - $1 is mandatory
+* *...* (String): The `gh` commands (1-n arguments) - $1 is mandatory
 
 === setUp
 
