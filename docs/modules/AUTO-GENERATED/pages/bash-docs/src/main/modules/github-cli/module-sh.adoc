@@ -39,6 +39,8 @@ jarvis
 == Index
 
 * <<_gh,gh>>
+* <<_setup,setUp>>
+* <<_teardown,tearDown>>
 
 === gh
 
@@ -49,9 +51,32 @@ execution is delegated to a Docker container.
 
 [,bash]
 ----
-echo "test: $(gh --version)"
+gh --version
 ----
 
 ==== Arguments
 
 * *...* (String): The ansible-playbook commands (1-n arguments) - $1 is mandatory
+
+=== setUp
+
+Run all setup tasks and take care of all prerequisites and dependencies. This function
+builds the local Docker image (among other things).
+
+==== Example
+
+[,bash]
+----
+setUp
+----
+
+=== tearDown
+
+Run all cleanup tasks at the end of the script.
+
+==== Example
+
+[,bash]
+----
+tearDown
+----
