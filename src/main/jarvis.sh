@@ -25,7 +25,6 @@ set -o nounset
 # set -o xtrace
 
 
-JARVIS_VERSION=""
 MODULES_PATH=""
 if [ "$0" = "/usr/bin/jarvis" ]; then
   MODULES_PATH="/opt/jarvis/src/main/"
@@ -36,7 +35,12 @@ docker run --rm mwendler/figlet:latest 'Jarvis CLI'
 
 
 (
-  cd ../../ || exit
+  if [ "$0" = "/usr/bin/jarvis" ]; then
+    cd /opt/jarvis || exit
+  else
+    cd ../../ || exit
+    echo -e "$LOG_WARN ${Y}Running from local development project${D}"
+  fi
 
   JARVIS_VERSION=$(docker run --rm \
     --volume "$(pwd):$(pwd)" \
@@ -45,9 +49,10 @@ docker run --rm mwendler/figlet:latest 'Jarvis CLI'
   
   echo -e "$LOG_INFO ======================================================================================================="
   echo -e "$LOG_INFO Jarvis version   =  $P$JARVIS_VERSION$D (branch / tag)"
-  echo -e "$LOG_INFO Current workdir  =  $(pwd)"
-  echo -e "$LOG_INFO ======================================================================================================="
 )
+
+echo -e "$LOG_INFO Current workdir  =  $(pwd)"
+echo -e "$LOG_INFO ======================================================================================================="
 
 echo -e "$LOG_INFO ${Y}What do you want me to do?${D}"
 select module in "$MODULES_PATH"modules/*; do
