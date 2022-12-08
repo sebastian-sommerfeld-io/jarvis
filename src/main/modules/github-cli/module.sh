@@ -4,7 +4,6 @@
 #
 # @description The module allows configuration of link:https://www.github.com[Github] repos, settings,
 # etc. (e.g. creating secrets for repositories) using the link:https://cli.github.com/manual[Github CLI].
-# The module prompts for valid github credentials.
 #
 # NOTE: Don't run this script directly! Always run the ``jarvis`` command and select the module of choice.
 #
