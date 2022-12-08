@@ -38,7 +38,7 @@ fi
 
 MODULE_PATH="$1"
 DOCKER_IMAGE="local/github-cli:dev"
-GITHUB_TOKEN=$(cat "$1/.secrets/github.token")
+GITHUB_TOKEN=$(cat "$MODULE_PATH/.secrets/github.token")
 
 
 # @description Facade to map ``gh`` command to the local docker container. The actual github-cli
