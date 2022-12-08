@@ -36,3 +36,23 @@ installed.
 ----
 jarvis
 ----
+
+== Index
+
+* <<_gh,gh>>
+
+=== gh
+
+Facade to map `gh` command to the local docker container. The actual github-cli
+execution is delegated to a Docker container.
+
+==== Example
+
+[,bash]
+----
+echo "test: $(gh --version)"
+----
+
+==== Arguments
+
+* *...* (String): The ansible-playbook commands (1-n arguments) - $1 is mandatory
