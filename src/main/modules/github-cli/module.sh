@@ -44,7 +44,6 @@ GITHUB_TOKEN=$(cat "$1/.secrets/github.token")
 echo -e "$LOG_INFO Github CLI"
 echo -e "$LOG_INFO Current workcurrent_dir = $(pwd)"
 
-
 (
   cd "$1" || exit
 
@@ -84,10 +83,11 @@ function gh() {
 echo -e "$LOG_INFO Show Github CLI version"
 gh --version
 
+echo -e "$LOG_INFO Create new seret"
+gh secret set FROM_GITHUB_CLI_IN_JARVIS --body "some stuff from jarvis" --repo "sebastian-sommerfeld-io/jarvis"
 
 echo -e "$LOG_INFO List actions secrets"
 gh secret list --app "actions" --repo "sebastian-sommerfeld-io/jarvis"
-
 
 echo -e "$LOG_INFO Remove local Docker image $DOCKER_IMAGE"
 docker image rm "$DOCKER_IMAGE"
