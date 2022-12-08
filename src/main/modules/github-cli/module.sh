@@ -47,7 +47,7 @@ GITHUB_TOKEN=$(cat "$MODULE_PATH/.secrets/github.token")
 # @example
 #    gh --version
 #
-# @arg $@ String The ansible-playbook commands (1-n arguments) - $1 is mandatory
+# @arg $@ String The ``gh`` commands (1-n arguments) - $1 is mandatory
 #
 ## @exitcode 8 If param with ``gh`` commands is missing
 function gh() {
@@ -102,12 +102,14 @@ echo -e "$LOG_INFO Current workcurrent_dir = $(pwd)"
 
 setUp
 
+echo -e "$LOG_INFO Show Github CLI version"
+echo -e "$LOG_INFO ======================================================================================================="
+gh --version
+echo -e "$LOG_INFO ======================================================================================================="
+
 # todo select menu for options "secrets repo-list whatever"
 
-echo -e "$LOG_INFO Show Github CLI version"
-gh --version
-
-echo -e "$LOG_INFO Create new seret"
+echo -e "$LOG_INFO Create new secret"
 gh secret set FROM_GITHUB_CLI_IN_JARVIS --body "some stuff from jarvis" --repo "sebastian-sommerfeld-io/jarvis"
 
 echo -e "$LOG_INFO List actions secrets"
