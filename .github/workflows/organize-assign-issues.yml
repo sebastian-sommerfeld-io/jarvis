@@ -1,5 +1,5 @@
 ---
-name: "Organize: Add Issue / PR to Project"
+name: "Organize: Add Issue + PR to Project"
 
 # +-------------------------------------------+
 # |                                           |
@@ -34,6 +34,19 @@ jobs:
         with:
           project-url: https://github.com/users/sebastian-sommerfeld-io/projects/1
           github-token: ${{ secrets.GH_TOKEN_REPO_AND_PROJECT }}
+
+  assign-to-user:
+    name: Assign to user
+    runs-on: ubuntu-latest
+    steps:
+      - name: Assign issue to user when moved into column
+        uses: pozil/auto-assign-issue@v1
+        # https://github.com/marketplace/actions/auto-assign-issue
+        with:
+          assignees: ${{ github.actor }}
+          numOfAssignee: 1
+          allowSelfAssign: true
+          abortIfPreviousAssignees: true
 
   on-failure:
     runs-on: ubuntu-latest
