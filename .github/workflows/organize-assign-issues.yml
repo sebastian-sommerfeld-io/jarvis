@@ -39,7 +39,6 @@ jobs:
     name: Assign to user
     # todo Run for issues, when issue is moved into status "In Progress" and assignee is not set
     # todo: update trigger
-    if: github.event.pull_request.a
     runs-on: ubuntu-latest
     steps:
       - name: Debug output
