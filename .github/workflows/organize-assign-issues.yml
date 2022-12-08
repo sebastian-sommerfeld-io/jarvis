@@ -39,10 +39,22 @@ jobs:
     name: Assign to user
     # todo Run for issues, when issue is moved into status "In Progress" and assignee is not set
     # todo: update trigger
+    if: github.event.pull_request.a
     runs-on: ubuntu-latest
     steps:
       - name: Debug output
-        run: echo "${{ github.actor }}"
+        run: |
+          echo "          Actor = ${{ github.actor }}"
+          echo
+          echo "          Issue = ${{ github.event.issue }}""
+          echo "    Issue State = ${{ github.event.issue.state }}""
+          echo " Issue Assingee = ${{ github.event.issue.assignee }}""
+          echo "Issue Assingees = ${{ github.event.issue.assignees }}""
+          echo
+          echo "             PR = ${{ github.event.pull_request }}""
+          echo "       PR State = ${{ github.event.pull_request.state }}""
+          echo "    PR Assingee = ${{ github.event.pull_request.assignee }}""
+          echo "   PR Assingees = ${{ github.event.pull_request.assignees }}""
       - name: Assign issue to user when moved into column
         uses: pozil/auto-assign-issue@v1
         # https://github.com/marketplace/actions/auto-assign-issue
