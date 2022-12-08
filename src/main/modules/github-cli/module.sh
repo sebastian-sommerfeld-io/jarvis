@@ -44,6 +44,7 @@ GITHUB_TOKEN=$(cat "$1/.secrets/github.token")
 echo -e "$LOG_INFO Github CLI"
 echo -e "$LOG_INFO Current workcurrent_dir = $(pwd)"
 
+
 (
   cd "$1" || exit
 
@@ -51,20 +52,42 @@ echo -e "$LOG_INFO Current workcurrent_dir = $(pwd)"
   docker build --no-cache -t "$DOCKER_IMAGE" .
 )
 
+
+# @description Facade to map ``gh`` command to the local docker container. The actual github-cli
+# execution is delegated to a Docker container.
+#
+# @example
+#    echo "test: $(gh --version)"
+#
+# @arg $@ String The ansible-playbook commands (1-n arguments) - $1 is mandatory
+#
+## @exitcode 8 If param with ``gh`` commands is missing
+function gh() {
+  if [ -z "$1" ]; then
+    echo -e "$LOG_ERROR No command passed to the container"
+    echo -e "$LOG_ERROR exit" && exit 8
+  fi
+
+  docker run --rm \
+    --volume /etc/passwd:/etc/passwd:ro \
+    --volume /etc/group:/etc/group:ro \
+    --user "$(id -u):$(id -g)" \
+    --volume /etc/timezone:/etc/timezone:ro \
+    --volume /etc/localtime:/etc/localtime:ro \
+    --volume "$(pwd):$(pwd)" \
+    --workdir "$(pwd)" \
+    --env "GITHUB_TOKEN=$GITHUB_TOKEN" \
+    "$DOCKER_IMAGE" gh "$@"
+}
+
+
 echo -e "$LOG_INFO Show Github CLI version"
-docker run --rm -it "$DOCKER_IMAGE" gh --version
+gh --version
+
 
 echo -e "$LOG_INFO List actions secrets"
-docker run --rm \
-  --volume /etc/passwd:/etc/passwd:ro \
-  --volume /etc/group:/etc/group:ro \
-  --user "$(id -u):$(id -g)" \
-  --volume /etc/timezone:/etc/timezone:ro \
-  --volume /etc/localtime:/etc/localtime:ro \
-  --volume "$(pwd):$(pwd)" \
-  --workdir "$(pwd)" \
-  --env "GITHUB_TOKEN=$GITHUB_TOKEN" \
-  "$DOCKER_IMAGE" gh secret list --app "actions" --repo "sebastian-sommerfeld-io/jarvis"
+gh secret list --app "actions" --repo "sebastian-sommerfeld-io/jarvis"
+
 
 echo -e "$LOG_INFO Remove local Docker image $DOCKER_IMAGE"
 docker image rm "$DOCKER_IMAGE"
