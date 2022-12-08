@@ -36,26 +36,16 @@ if [ -z "$1" ]; then
 fi
 
 
+MODULE_PATH="$1"
 DOCKER_IMAGE="local/github-cli:dev"
 GITHUB_TOKEN=$(cat "$1/.secrets/github.token")
-
-
-echo -e "$LOG_INFO Github CLI"
-echo -e "$LOG_INFO Current workcurrent_dir = $(pwd)"
-
-(
-  cd "$1" || exit
-
-  echo -e "$LOG_INFO Build local Docker image $DOCKER_IMAGE"
-  docker build --no-cache -t "$DOCKER_IMAGE" .
-)
 
 
 # @description Facade to map ``gh`` command to the local docker container. The actual github-cli
 # execution is delegated to a Docker container.
 #
 # @example
-#    echo "test: $(gh --version)"
+#    gh --version
 #
 # @arg $@ String The ansible-playbook commands (1-n arguments) - $1 is mandatory
 #
@@ -79,6 +69,41 @@ function gh() {
 }
 
 
+# @description Run all setup tasks and take care of all prerequisites and dependencies. This function
+# builds the local Docker image (among other things).
+#
+# @example
+#    setUp
+function setUp() {
+  echo -e "$LOG_INFO Set up"
+  (
+    cd "$MODULE_PATH" || exit
+
+    echo -e "$LOG_INFO Build local Docker image $DOCKER_IMAGE"
+    docker build --no-cache -t "$DOCKER_IMAGE" .
+  )
+}
+
+
+# @description Run all cleanup tasks at the end of the script.
+#
+# @example
+#    tearDown
+function tearDown() {
+  echo -e "$LOG_INFO Tear down"
+  
+  echo -e "$LOG_INFO Remove local Docker image $DOCKER_IMAGE"
+  docker image rm "$DOCKER_IMAGE"
+}
+
+
+echo -e "$LOG_INFO Github CLI options"
+echo -e "$LOG_INFO Current workcurrent_dir = $(pwd)"
+
+setUp
+
+# todo select menu for options "secrets repo-list whatever"
+
 echo -e "$LOG_INFO Show Github CLI version"
 gh --version
 
@@ -88,5 +113,4 @@ gh secret set FROM_GITHUB_CLI_IN_JARVIS --body "some stuff from jarvis" --repo "
 echo -e "$LOG_INFO List actions secrets"
 gh secret list --app "actions" --repo "sebastian-sommerfeld-io/jarvis"
 
-echo -e "$LOG_INFO Remove local Docker image $DOCKER_IMAGE"
-docker image rm "$DOCKER_IMAGE"
+tearDown
