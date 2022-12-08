@@ -41,7 +41,7 @@ current_dir="$(pwd)"
 current_dir="${current_dir##*/}"
 if [ "$current_dir" != "$DIR" ]; then
   echo -e "$LOG_ERROR The current directory is expected to be $Y$DIR$D ... Instead detected $Y$current_dir$D"
-  #echo -e "$LOG_ERROR exit" && exit 8
+  echo -e "$LOG_ERROR exit" && exit 8
 fi
 
 echo -e "$LOG_INFO Copy pull request template"
