@@ -45,7 +45,8 @@ MENU_OPTION_SECRETS="secrets"
 
 
 # @description Facade to map ``gh`` command to the local docker container. The actual github-cli
-# execution is delegated to a Docker container.
+# execution is delegated to a Docker container. When running this script during local development,
+# all commands are executed against the ``sebastian-sommerfeld-io/trashbox`` repository.
 #
 # @example
 #    gh --version
@@ -59,16 +60,35 @@ function gh() {
     echo -e "$LOG_ERROR exit" && exit 8
   fi
 
-  docker run --rm \
-    --volume /etc/passwd:/etc/passwd:ro \
-    --volume /etc/group:/etc/group:ro \
-    --user "$(id -u):$(id -g)" \
-    --volume /etc/timezone:/etc/timezone:ro \
-    --volume /etc/localtime:/etc/localtime:ro \
-    --volume "$(pwd):$(pwd)" \
-    --workdir "$(pwd)" \
-    --env "GITHUB_TOKEN=$GITHUB_TOKEN" \
-    "$DOCKER_IMAGE" gh "$@"
+  if [ "$1" = "--version" ]; then
+    docker run --rm "$DOCKER_IMAGE" gh "$@"
+  else
+    if [ "$IS_DEV" = "true" ]; then
+      echo -e "$LOG_WARN ${Y}Running from local development project${D}"
+      echo -e "$LOG_WARN Using repo: ${Y}$TEST_REPO${D}"
+      docker run --rm \
+        --volume /etc/passwd:/etc/passwd:ro \
+        --volume /etc/group:/etc/group:ro \
+        --user "$(id -u):$(id -g)" \
+        --volume /etc/timezone:/etc/timezone:ro \
+        --volume /etc/localtime:/etc/localtime:ro \
+        --volume "$(pwd):$(pwd)" \
+        --workdir "$(pwd)" \
+        --env "GITHUB_TOKEN=$GITHUB_TOKEN" \
+        "$DOCKER_IMAGE" gh "$@" --repo "$TEST_REPO"
+    else
+      docker run --rm \
+        --volume /etc/passwd:/etc/passwd:ro \
+        --volume /etc/group:/etc/group:ro \
+        --user "$(id -u):$(id -g)" \
+        --volume /etc/timezone:/etc/timezone:ro \
+        --volume /etc/localtime:/etc/localtime:ro \
+        --volume "$(pwd):$(pwd)" \
+        --workdir "$(pwd)" \
+        --env "GITHUB_TOKEN=$GITHUB_TOKEN" \
+        "$DOCKER_IMAGE" gh "$@"
+    fi
+  fi
 }
 
 
@@ -131,12 +151,12 @@ function secrets() {
     echo -e "$LOG_INFO Enter value for secret"
     read -r value
 
-    gh secret set "$s" --body "$value" --repo "$TEST_REPO"
+    gh secret set "$s" --body "$value"
     break
   done
 
   echo -e "$LOG_INFO List all secrets from repository"
-  gh secret list --app "actions" --repo "$TEST_REPO"
+  gh secret list --app "actions"
 }
 
 
