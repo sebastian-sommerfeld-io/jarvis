@@ -46,7 +46,8 @@ jarvis
 === gh
 
 Facade to map `gh` command to the local docker container. The actual github-cli
-execution is delegated to a Docker container.
+execution is delegated to a Docker container. When running this script during local development,
+all commands are executed against the `sebastian-sommerfeld-io/trashbox` repository.
 
 ==== Example
 
