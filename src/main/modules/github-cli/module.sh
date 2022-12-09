@@ -38,8 +38,18 @@ fi
 
 MODULE_PATH="$1"
 DOCKER_IMAGE="local/github-cli:dev"
-GITHUB_TOKEN=$(cat "$MODULE_PATH/.secrets/github.token")
 TEST_REPO="sebastian-sommerfeld-io/trashbox"
+
+
+TOKEN_FILE="$MODULE_PATH/.secrets/github.token"
+if [ ! -f "$TOKEN_FILE" ]; then
+  echo -e "$LOG_WARN No github peronal access token found"
+  echo -e "$LOG_INFO Enter token"
+  read -r token
+  echo "$token" > "$TOKEN_FILE"
+fi
+GITHUB_TOKEN=$(cat "$TOKEN_FILE")
+
 
 MENU_OPTION_SECRETS="add_secrets"
 
