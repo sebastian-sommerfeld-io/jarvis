@@ -44,6 +44,8 @@ TEST_REPO="sebastian-sommerfeld-io/trashbox"
 TOKEN_FILE="$MODULE_PATH/.secrets/github.token"
 if [ ! -f "$TOKEN_FILE" ]; then
   echo -e "$LOG_WARN No github peronal access token found"
+  echo -e "$LOG_WARN See Bitwarden Vault for token value (if exists)"
+  echo -e "$LOG_WARN Manage tokens in Github: https://github.com/settings/tokens"
   echo -e "$LOG_INFO Enter token"
   read -r token
   echo "$token" > "$TOKEN_FILE"
