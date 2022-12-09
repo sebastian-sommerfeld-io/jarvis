@@ -41,6 +41,7 @@ jarvis
 * <<_gh,gh>>
 * <<_setup,setUp>>
 * <<_teardown,tearDown>>
+* <<_secrets,secrets>>
 
 === gh
 
@@ -79,4 +80,16 @@ Run all cleanup tasks at the end of the script.
 [,bash]
 ----
 tearDown
+----
+
+=== secrets
+
+Function to handle all tasks for menu option "secrets". Creates secrets for a given
+github repository.
+
+==== Example
+
+[,bash]
+----
+secrets
 ----
