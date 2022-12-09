@@ -6,7 +6,7 @@
 # command from the ``.github`` folder in your project. The module only creates static workflows which
 # are exactly the same for all repositories.
 #
-# NOTE: Don't run this script current_directly! Always run the ``jarvis`` command and select the module of choice.
+# NOTE: Don't run this script directly! Always run the ``jarvis`` command and select the module of choice.
 #
 # === Script Arguments
 #
