@@ -1,7 +1,7 @@
 ---
 name: jarvis-cli-docs
 title: Jarvis CLI
-version: feat__45-github-cli
+version: main
 start_page: ROOT:index.adoc
 nav:
   - modules/ROOT/nav.adoc
