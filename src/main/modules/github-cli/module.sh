@@ -41,7 +41,7 @@ DOCKER_IMAGE="local/github-cli:dev"
 GITHUB_TOKEN=$(cat "$MODULE_PATH/.secrets/github.token")
 TEST_REPO="sebastian-sommerfeld-io/trashbox"
 
-MENU_OPTION_SECRETS="secrets"
+MENU_OPTION_SECRETS="add_secrets"
 
 
 # @description Facade to map ``gh`` command to the local docker container. The actual github-cli
