@@ -39,6 +39,9 @@ fi
 MODULE_PATH="$1"
 DOCKER_IMAGE="local/github-cli:dev"
 GITHUB_TOKEN=$(cat "$MODULE_PATH/.secrets/github.token")
+TEST_REPO="sebastian-sommerfeld-io/trashbox"
+
+MENU_OPTION_SECRETS="secrets"
 
 
 # @description Facade to map ``gh`` command to the local docker container. The actual github-cli
@@ -97,6 +100,46 @@ function tearDown() {
 }
 
 
+# @description Function to handle all tasks for menu option "secrets". Creates secrets for a given
+# github repository.
+#
+# @example
+#    secrets
+function secrets() {
+  secret_GOOGLE_CHAT_WEBHOOK="GOOGLE_CHAT_WEBHOOK"
+  secret_GH_TOKEN_REPO_AND_PROJECT="GH_TOKEN_REPO_AND_PROJECT"
+  secret_DOCKERHUB_USER="DOCKERHUB_USER"
+  secret_DOCKERHUB_PASS="DOCKERHUB_PASS"
+  secret_SNYK_TOKEN="SNYK_TOKEN"
+  secret_FTP_USER="FTP_USER"
+  secret_FTP_PASS="FTP_PASS"
+
+  echo -e "$LOG_INFO Secrets for all repositories"
+  echo -e "$LOG_INFO   ${P}$secret_GH_TOKEN_REPO_AND_PROJECT${D}  ...  Pipeline interacts with Github Projects"
+  echo -e "$LOG_INFO   ${P}$secret_GOOGLE_CHAT_WEBHOOK${D}  .........  Pipeline sends error messages to chat"
+  echo -e "$LOG_INFO Secrets for repositories with Docker images"
+  echo -e "$LOG_INFO   ${P}$secret_DOCKERHUB_USER${D}  ..............  Deploy container image to DockerHub"
+  echo -e "$LOG_INFO   ${P}$secret_DOCKERHUB_PASS${D}  ..............  Deploy container image to DockerHub"
+  echo -e "$LOG_INFO   ${P}$secret_SNYK_TOKEN${D}  ..................  Scan container image for security issues"
+  echo -e "$LOG_INFO Secrets for repositories with HTML websites"
+  echo -e "$LOG_INFO   ${P}$secret_FTP_USER${D}  ....................  Upload html contents to ftp webspace"
+  echo -e "$LOG_INFO   ${P}$secret_FTP_PASS${D}  ....................  Upload html contents to ftp webspace"
+
+  echo -e "$LOG_INFO ${Y}Which secret should I create?${D}"
+  select s in "$secret_GOOGLE_CHAT_WEBHOOK" "$secret_GH_TOKEN_REPO_AND_PROJECT" "$secret_DOCKERHUB_USER" "$secret_DOCKERHUB_PASS" "$secret_SNYK_TOKEN" "$secret_FTP_USER" "$secret_FTP_PASS"; do
+    echo -e "$LOG_INFO Create new secret $s"
+    echo -e "$LOG_INFO Enter value for secret"
+    read -r value
+
+    gh secret set "$s" --body "$value" --repo "$TEST_REPO"
+    break
+  done
+
+  echo -e "$LOG_INFO List all secrets from repository"
+  gh secret list --app "actions" --repo "$TEST_REPO"
+}
+
+
 echo -e "$LOG_INFO Github CLI options"
 echo -e "$LOG_INFO Current workcurrent_dir = $(pwd)"
 
@@ -104,15 +147,17 @@ setUp
 
 echo -e "$LOG_INFO Show Github CLI version"
 echo -e "$LOG_INFO ======================================================================================================="
+echo "Github CLI"
 gh --version
 echo -e "$LOG_INFO ======================================================================================================="
 
-# todo select menu for options "secrets repo-list whatever"
+echo -e "$LOG_INFO ${Y}Github CLI - Menu${D}"
+select option in "$MENU_OPTION_SECRETS"; do
+  case "$option" in
+    "$MENU_OPTION_SECRETS" ) secrets ;;
+  esac
 
-echo -e "$LOG_INFO Create new secret"
-gh secret set FROM_GITHUB_CLI_IN_JARVIS --body "some stuff from jarvis" --repo "sebastian-sommerfeld-io/jarvis"
-
-echo -e "$LOG_INFO List actions secrets"
-gh secret list --app "actions" --repo "sebastian-sommerfeld-io/jarvis"
+  break
+done
 
 tearDown
