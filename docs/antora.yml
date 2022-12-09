@@ -1,7 +1,7 @@
 ---
 name: jarvis-cli-docs
 title: Jarvis CLI
-version: v0.1.0
+version: v0.2.0
 start_page: ROOT:index.adoc
 nav:
   - modules/ROOT/nav.adoc
