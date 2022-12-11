@@ -19,7 +19,7 @@ on:
     types:
       - opened
   schedule:
-    - cron: '0 11 * * *' # https://crontab.guru/#0_11_*_*_*
+    - cron: '0 9 * * *' # https://crontab.guru/#0_9_*_*_*
 
 permissions:
   contents: read
