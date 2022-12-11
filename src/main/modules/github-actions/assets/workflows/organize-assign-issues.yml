@@ -56,7 +56,7 @@ jobs:
       - name: Send message to Google Chat
         uses: Co-qn/google-chat-notification@releases/v1
         with:
-          name: New Pull Request ${{ github.event.pull_request.title }} (raised by ${{ github.actor }})
+          name: New Pull Request "${{ github.event.pull_request.title }}" (raised by ${{ github.actor }})
           url: ${{ secrets.GOOGLE_CHAT_WEBHOOK }}
           status: ${{ job.status }}
 
