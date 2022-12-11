@@ -18,6 +18,8 @@ on:
   pull_request:
     types:
       - opened
+  schedule:
+    - cron: '57 22 * * *' # https://crontab.guru/#0_11_*_*_*
 
 permissions:
   contents: read
