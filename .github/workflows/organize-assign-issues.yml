@@ -48,11 +48,22 @@ jobs:
           allowSelfAssign: true
           abortIfPreviousAssignees: true
 
-  on-failure:
+  new-pull-request-chat-message:
     runs-on: ubuntu-latest
     needs: ['add-to-project', 'assign-to-user']
-    if: failure()
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Send message to Google Chat
+        uses: Co-qn/google-chat-notification@releases/v1
+        with:
+          name: New Pull Request "${{ github.event.pull_request.title }}" (raised by ${{ github.actor }})
+          url: ${{ secrets.GOOGLE_CHAT_WEBHOOK }}
+          status: ${{ job.status }}
 
+  on-failure:
+    runs-on: ubuntu-latest
+    needs: ['add-to-project', 'assign-to-user', 'new-pull-request-chat-message']
+    if: failure()
     steps:
       - name: Send Pipeline Status to Google Chat
         if: always()
