@@ -1,7 +1,7 @@
 ---
 name: jarvis-cli-docs
 title: Jarvis CLI
-version: main
+version: feat__53-chat-message-for-new-pull-request
 start_page: ROOT:index.adoc
 nav:
   - modules/ROOT/nav.adoc
