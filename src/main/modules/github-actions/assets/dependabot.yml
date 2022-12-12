@@ -1,0 +1,16 @@
+---
+
+#  +--------------------------------------------+
+#  |                                            |
+#  |    Demo-file for a docker-image-* repo.    |
+#  |                                            |
+#! |    ADJUST THIS FILE TO YOUR NEEDS !!!!     |
+#  |                                            |
+#  +--------------------------------------------+
+
+version: 2
+updates:
+  - package-ecosystem: "docker"
+    directory: "src/main"
+    schedule:
+      interval: "daily"

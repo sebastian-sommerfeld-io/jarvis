@@ -56,3 +56,8 @@ cp "$1/assets/PULL_REQUEST_TEMPLATE.md" "PULL_REQUEST_TEMPLATE.md"
   cp "$1/assets/workflows/organize-labels.yml" "organize-labels.yml"
   cp "$1/assets/workflows/organize-assign-issues.yml" "organize-assign-issues.yml"
 )
+
+echo -e "$LOG_INFO Copy Dependabot config"
+cp "$1/assets/dependabot.yml" "dependabot.yml"
+echo -e "$LOG_WARN Update Dependabot config according to your needs!"
+echo -e "$LOG_WARN If needed: Update triggers and if-conditions of your existing pipelines!"
