@@ -35,7 +35,7 @@ read -r COMPONENT_TITLE
 echo -e "$LOG_INFO Enter component name (url slug):"
 read -r COMPONENT_NAME
 
-echo -e "$LOG_INFO Enter Github project name (without path)"
+echo -e "$LOG_INFO Enter Github project name (without path, just the name ... drop 'sebastian-sommerfeld-io/')"
 read -r GITHUB_PROJECT_NAME
 
 
