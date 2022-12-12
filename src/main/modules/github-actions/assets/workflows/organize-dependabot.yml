@@ -27,12 +27,13 @@ jobs:
     steps:
       - name: Get PR and assign user (filtered by github cli)
         env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_REPO_AND_PROJECT }}
           label: dependencies
           assignee: sebastian-sommerfeld-io
         run: |
-          pr_ids="$(GITHUB_TOKEN=${{ secrets.GH_TOKEN_REPO_AND_PROJECT }} gh pr list --repo "$GITHUB_REPOSITORY" --label "$label" --json number --jq '.[].number')"
+          pr_ids="$(gh pr list --repo "$GITHUB_REPOSITORY" --label "$label" --json number --jq '.[].number')"
           for id in $pr_ids; do
-            GITHUB_TOKEN=${{ secrets.GH_TOKEN_REPO_AND_PROJECT }} gh pr edit "$id" --repo "$GITHUB_REPOSITORY" --add-assignee "$assignee"
+            gh pr edit "$id" --repo "$GITHUB_REPOSITORY" --add-assignee "$assignee"
           done
 
   on-failure:
