@@ -13,7 +13,7 @@ name: "Organize: Dependabot Pull Requests"
 
 on:
   schedule:
-    - cron: '0-59 * * * *' # https://crontab.guru
+    - cron: '30 * * * *' # https://crontab.guru
 
 permissions:
   contents: read

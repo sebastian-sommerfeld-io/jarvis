@@ -13,7 +13,7 @@ name: "Organize: Dependabot Pull Requests"
 
 on:
   schedule:
-    - cron: '0-59 * * * *' # https://crontab.guru
+    - cron: '30 * * * *' # https://crontab.guru
 
 permissions:
   contents: read
@@ -25,7 +25,7 @@ jobs:
     name: organize issues and PRs with label 'dependencies'
     runs-on: ubuntu-latest
     steps:
-      - name: Get and update PR
+      - name: Get PR and assign user (filtered by github cli)
         env:
           label: dependencies
           assignee: sebastian-sommerfeld-io
