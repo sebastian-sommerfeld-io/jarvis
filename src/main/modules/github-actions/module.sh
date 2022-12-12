@@ -59,17 +59,12 @@ mkdir -p workflows
   cp "$1/assets/workflows/organize-labels.yml" "organize-labels.yml"
   cp "$1/assets/workflows/organize-assign-issues.yml" "organize-assign-issues.yml"
   cp "$1/assets/workflows/organize-dependabot.yml" "organize-dependabot.yml"
-
-  echo -e "$LOG_INFO Setup workflow: auto-generate-docs"
   cp "$1/assets/workflows/auto-generate-docs.yml" "auto-generate-docs.yml"
-  echo -e "$LOG_INFO Enter component title:"
-  read -r COMPONENT_TITLE
-  echo -e "$LOG_INFO Replace component title in workflow file"
-  old="__COMPONENT_TITLE__"
-  sed -i "s|$old|$COMPONENT_TITLE|g" "auto-generate-docs.yml"
 )
 
 echo -e "$LOG_INFO Copy Dependabot config"
 cp "$1/assets/dependabot.yml" "dependabot.yml"
-echo -e "$LOG_WARN Update Dependabot config according to your needs!"
-echo -e "$LOG_WARN If needed: Update triggers and if-conditions of your existing pipelines!"
+echo -e "$LOG_WARN ${Y}There are some manual todos left${D}"
+echo -e "$LOG_WARN   - Update Dependabot config according to your needs!"
+echo -e "$LOG_WARN   - If needed: Update triggers and if-conditions of your existing pipelines!"
+echo -e "$LOG_WARN   - Replace '__COMPONENT_TITLE__' in auto-generate-docs.yml"
