@@ -1,0 +1,7 @@
+---
+version: 2
+updates:
+  - package-ecosystem: "docker"
+    directory: "src/main/modules/github-cli"
+    schedule:
+      interval: "daily"
