@@ -47,15 +47,26 @@ fi
 echo -e "$LOG_INFO Copy pull request template"
 cp "$1/assets/PULL_REQUEST_TEMPLATE.md" "PULL_REQUEST_TEMPLATE.md"
 
+echo -e "$LOG_INFO Create workflows folder if not already presend"
+mkdir -p workflows
+
 (
   cd workflows || exit
 
-  echo -e "$LOG_INFO Copy workflows and workflow assets"
+  echo -e "$LOG_INFO Setup workflows and workflow assets"
   cp -a "$1/assets/workflows/assets" ./
   cp "$1/assets/workflows/organize-auto-close-issues.yml" "organize-auto-close-issues.yml"
   cp "$1/assets/workflows/organize-labels.yml" "organize-labels.yml"
   cp "$1/assets/workflows/organize-assign-issues.yml" "organize-assign-issues.yml"
   cp "$1/assets/workflows/organize-dependabot.yml" "organize-dependabot.yml"
+
+  echo -e "$LOG_INFO Setup workflow: auto-generate-docs"
+  cp "$1/assets/workflows/auto-generate-docs.yml" "auto-generate-docs.yml"
+  echo -e "$LOG_INFO Enter component title:"
+  read -r COMPONENT_TITLE
+  echo -e "$LOG_INFO Replace component title in workflow file"
+  old="__COMPONENT_TITLE__"
+  sed -i "s|$old|$COMPONENT_TITLE|g" "auto-generate-docs.yml"
 )
 
 echo -e "$LOG_INFO Copy Dependabot config"
