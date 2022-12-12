@@ -76,8 +76,6 @@ function gh() {
     docker run --rm "$DOCKER_IMAGE" gh "$@"
   else
     if [ "$IS_DEV" = "true" ]; then
-      echo -e "$LOG_WARN ${Y}Running from local development project${D}"
-      echo -e "$LOG_WARN Using repo: ${Y}$TEST_REPO${D}"
       docker run --rm \
         --volume /etc/passwd:/etc/passwd:ro \
         --volume /etc/group:/etc/group:ro \
@@ -181,6 +179,10 @@ echo -e "$LOG_INFO Show Github CLI version"
 echo -e "$LOG_INFO ======================================================================================================="
 echo "Github CLI"
 gh --version
+if [ "$IS_DEV" = "true" ]; then
+  echo -e "$LOG_WARN ${Y}Running from local development project${D}"
+  echo -e "$LOG_WARN Using repo: ${Y}$TEST_REPO${D}"
+fi
 echo -e "$LOG_INFO ======================================================================================================="
 
 echo -e "$LOG_INFO ${Y}Github CLI - Menu${D}"
