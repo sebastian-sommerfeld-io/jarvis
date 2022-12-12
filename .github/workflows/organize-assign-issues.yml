@@ -18,8 +18,7 @@ on:
   pull_request:
     types:
       - opened
-  schedule:
-    - cron: '0 11 * * *' # https://crontab.guru/#0_11_*_*_*
+      - labeled # PRs from dependabot are labeled
 
 permissions:
   contents: read
@@ -53,7 +52,8 @@ jobs:
   new-pull-request-chat-message:
     runs-on: ubuntu-latest
     needs: ['add-to-project', 'assign-to-user']
-    if: github.event_name == 'pull_request'
+    # Only for PRs from dependabot
+    if: github.event_name == 'pull_request' && github.event.label.name == 'dependencies'
     steps:
       - name: Send message to Google Chat
         uses: Co-qn/google-chat-notification@releases/v1
