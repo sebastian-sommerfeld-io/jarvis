@@ -8,7 +8,7 @@ image:{github-actions-url}/{job-ci}/{badge}[Github Badge, link={github-actions-u
 * Where to file issues -> {url-project}/issues
 
 == About this project
-This project assists with daily tasks and helps reducing time and overhead by automating some simple tasks like initializing a new link:https://antora.org[Antora] component.
+This project assists with daily tasks and helps reducing time and overhead by automating some simple tasks like initializing a new link:https://antora.org[Antora] component or creating SSH keypairs.
 
 Jarvis uses a modular achitecture to add new featues. This allows every module to choose the toolset on its own (Plain Bash scripts, Docker, Groovy, ...) as long as it is started by a Bash command.
 
@@ -17,7 +17,7 @@ To install this project simply use the bootstrap script `curl https://raw.github
 
 To use this project, just run the `jarvis` command from your bash.
 
-Keep in mind that this project was developed on an Ubuntu machine and is not tested for any other environment.
+NOTE: Keep in mind that this project was developed on an Ubuntu machine and is not tested for any other environment.
 
 == Risks and Technical Debts
 Scale for Probability and Impact: Low, Medium and High
