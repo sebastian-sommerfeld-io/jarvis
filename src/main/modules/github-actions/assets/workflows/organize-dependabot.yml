@@ -13,7 +13,7 @@ name: "Organize: Dependabot Pull Requests"
 
 on:
   schedule:
-    - cron: '0 * * * *' # https://crontab.guru
+    - cron: '0 12 * * *' # https://crontab.guru
 
 permissions:
   contents: read
@@ -32,15 +32,10 @@ jobs:
           label: dependencies
           assignee: ${{ github.actor }}
         run: |
-          OUTPUT=""
           pr_ids="$(gh pr list --repo "$GITHUB_REPOSITORY" --label "$label" --json number --jq '.[].number')"
           for id in $pr_ids; do
-            OUTPUT="$OUTPUT $(gh pr edit "$id" --repo "$GITHUB_REPOSITORY" --add-assignee "$assignee")"
+            gh pr edit "$id" --repo "$GITHUB_REPOSITORY" --add-assignee "$assignee"
           done
-
-          echo "----- List of PRs ---------------"
-          echo "$OUTPUT"
-          echo "PULL_REQUESTS=$OUTPUT" >> $GITHUB_OUTPUT
 
   send-notification:
     runs-on: ubuntu-latest
@@ -49,7 +44,7 @@ jobs:
       - name: Send Pull Request information to Google Chat
         uses: Co-qn/google-chat-notification@releases/v1
         with:
-          name: Assigned PRs with label 'dependencies' >> ${{ steps.vars.outputs.PULL_REQUESTS }}
+          name: New Pull Request(s) with label 'dependencies'
           url: ${{ secrets.GOOGLE_CHAT_WEBHOOK }}
           status: ${{ job.status }}
 
