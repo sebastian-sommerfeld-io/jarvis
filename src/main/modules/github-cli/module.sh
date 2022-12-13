@@ -145,16 +145,11 @@ function secrets() {
   secret_FTP_USER="FTP_USER"
   secret_FTP_PASS="FTP_PASS"
 
-  echo -e "$LOG_INFO Secrets for all repositories"
-  echo -e "$LOG_INFO   ${P}$secret_GH_TOKEN_REPO_AND_PROJECT${D}  ...  Pipeline interacts with Github Projects"
-  echo -e "$LOG_INFO   ${P}$secret_GOOGLE_CHAT_WEBHOOK${D}  .........  Pipeline sends error messages to chat"
-  echo -e "$LOG_INFO Secrets for repositories with Docker images"
-  echo -e "$LOG_INFO   ${P}$secret_DOCKERHUB_USER${D}  ..............  Deploy container image to DockerHub"
-  echo -e "$LOG_INFO   ${P}$secret_DOCKERHUB_PASS${D}  ..............  Deploy container image to DockerHub"
-  echo -e "$LOG_INFO   ${P}$secret_SNYK_TOKEN${D}  ..................  Scan container image for security issues"
-  echo -e "$LOG_INFO Secrets for repositories with HTML websites"
-  echo -e "$LOG_INFO   ${P}$secret_FTP_USER${D}  ....................  Upload html contents to ftp webspace"
-  echo -e "$LOG_INFO   ${P}$secret_FTP_PASS${D}  ....................  Upload html contents to ftp webspace"
+  echo -e "$LOG_INFO Create secrets"
+
+  echo -e '\033[0;37m' # light grey
+  cat "$MODULE_PATH/assets/help/secrets.txt"
+  echo -e "$D"
 
   echo -e "$LOG_INFO ${Y}Which secret should I create?${D}"
   select s in "$secret_GOOGLE_CHAT_WEBHOOK" "$secret_GH_TOKEN_REPO_AND_PROJECT" "$secret_DOCKERHUB_USER" "$secret_DOCKERHUB_PASS" "$secret_SNYK_TOKEN" "$secret_FTP_USER" "$secret_FTP_PASS"; do
