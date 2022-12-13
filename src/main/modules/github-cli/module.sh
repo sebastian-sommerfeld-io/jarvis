@@ -180,10 +180,10 @@ function secrets() {
 function listDependabotPRs() {
   dependabotLabel="dependencies"
 
-  echo -e "$LOG_INFO List ${P}all${D} Pull Requests from dependabot"
+  echo -e "$LOG_INFO List ${P}all open${D} Pull Requests from dependabot"
   gh pr list --label "$dependabotLabel"
 
-  echo -e "$LOG_INFO List ${P}unassinged${D} Pull Requests from dependabot"
+  echo -e "$LOG_INFO List ${P}open and unassinged ${D} Pull Requests from dependabot"
   gh pr list --search "no:assignee label:$dependabotLabel"
 }
 
