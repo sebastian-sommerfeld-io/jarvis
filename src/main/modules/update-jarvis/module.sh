@@ -29,6 +29,12 @@ if [ -z "$1" ]; then
   echo -e "$LOG_ERROR exit" && exit 8
 fi
 
-
+echo -e "$LOG_INFO ======================================================================================================="
 echo -e "$LOG_INFO Update jarvis"
+echo -e "$LOG_INFO Current workdir = $(pwd)"
+if [ "$IS_DEV" = "true" ]; then
+  echo -e "$LOG_WARN ${Y}Running from local development project${D}"
+fi
+echo -e "$LOG_INFO ======================================================================================================="
+
 curl https://raw.githubusercontent.com/sebastian-sommerfeld-io/jarvis/main/src/main/install.sh | bash -

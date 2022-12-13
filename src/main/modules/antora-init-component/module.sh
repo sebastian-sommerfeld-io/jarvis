@@ -29,18 +29,27 @@ if [ -z "$1" ]; then
   echo -e "$LOG_ERROR exit" && exit 8
 fi
 
+
+echo -e "$LOG_INFO ======================================================================================================="
+echo -e "$LOG_INFO Create Antora component"
+echo -e "$LOG_INFO Current workdir = $(pwd)"
+if [ "$IS_DEV" = "true" ]; then
+  echo -e "$LOG_WARN ${Y}Running from local development project${D}"
+fi
+echo -e "$LOG_INFO ======================================================================================================="
+
+
 echo -e "$LOG_INFO Enter component title:"
 read -r COMPONENT_TITLE
+readonly COMPONENT_TITLE
 
 echo -e "$LOG_INFO Enter component name (url slug):"
 read -r COMPONENT_NAME
+readonly COMPONENT_NAME
 
 echo -e "$LOG_INFO Enter Github project name (without path, just the name ... drop 'sebastian-sommerfeld-io/')"
 read -r GITHUB_PROJECT_NAME
-
-
-echo -e "$LOG_INFO Create Antora component"
-echo -e "$LOG_INFO Current workdir = $(pwd)"
+readonly GITHUB_PROJECT_NAME
 
 echo -e "$LOG_INFO Copy Antora template"
 cp -a "$1/assets/antora-component/docs" "docs"

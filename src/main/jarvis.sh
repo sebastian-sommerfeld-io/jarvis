@@ -34,6 +34,7 @@ MODULES_PATH=""
 if [ "$0" = "/usr/bin/jarvis" ]; then
   MODULES_PATH="/opt/jarvis/src/main/"
 fi
+readonly MODULES_PATH
 
 
 docker run --rm mwendler/figlet:latest 'Jarvis CLI'

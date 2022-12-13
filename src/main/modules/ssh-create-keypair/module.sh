@@ -24,8 +24,8 @@ set -o nounset
 # set -o xtrace
 
 
-ALGORITHM="rsa"
-KEY_SIZE="4096"
+readonly ALGORITHM="rsa"
+readonly KEY_SIZE="4096"
 
 
 if [ -z "$1" ]; then
@@ -34,13 +34,18 @@ if [ -z "$1" ]; then
 fi
 
 
+echo -e "$LOG_INFO ======================================================================================================="
 echo -e "$LOG_INFO Create ssh keypair"
 echo -e "$LOG_INFO Current workdir = $(pwd)"
+if [ "$IS_DEV" = "true" ]; then
+  echo -e "$LOG_WARN ${Y}Running from local development project${D}"
+fi
+echo -e "$LOG_INFO ======================================================================================================="
 
 
 echo -e "$LOG_INFO Enter filename"
 read -r FILENAME
-
+readonly FILENAME
 
 (
   cd "$HOME/.ssh" || exit

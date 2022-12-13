@@ -36,12 +36,12 @@ if [ -z "$1" ]; then
 fi
 
 
-MODULE_PATH="$1"
-DOCKER_IMAGE="local/github-cli:dev"
-TEST_REPO="sebastian-sommerfeld-io/trashbox"
+readonly MODULE_PATH="$1"
+readonly DOCKER_IMAGE="local/github-cli:dev"
+readonly TEST_REPO="sebastian-sommerfeld-io/trashbox"
 
 
-TOKEN_FILE="$MODULE_PATH/.secrets/github.token"
+readonly TOKEN_FILE="$MODULE_PATH/.secrets/github.token"
 if [ ! -f "$TOKEN_FILE" ]; then
   echo -e "$LOG_WARN No github peronal access token found"
   echo -e "$LOG_WARN See Bitwarden Vault for token value (if exists)"
@@ -51,10 +51,11 @@ if [ ! -f "$TOKEN_FILE" ]; then
   echo "$token" > "$TOKEN_FILE"
 fi
 GITHUB_TOKEN=$(cat "$TOKEN_FILE")
+readonly GITHUB_TOKEN
 
 
-MENU_OPTION_SECRETS="add_secrets"
-MENU_OPTION_DEPENDABOT_PR="list_dependabot_pull_requests"
+readonly MENU_OPTION_SECRETS="add_secrets"
+readonly MENU_OPTION_DEPENDABOT_PR="list_dependabot_pull_requests"
 
 
 # @description Facade to map ``gh`` command to the local docker container. The actual github-cli
@@ -137,13 +138,13 @@ function tearDown() {
 # @example
 #    secrets
 function secrets() {
-  secret_GOOGLE_CHAT_WEBHOOK="GOOGLE_CHAT_WEBHOOK"
-  secret_GH_TOKEN_REPO_AND_PROJECT="GH_TOKEN_REPO_AND_PROJECT"
-  secret_DOCKERHUB_USER="DOCKERHUB_USER"
-  secret_DOCKERHUB_PASS="DOCKERHUB_PASS"
-  secret_SNYK_TOKEN="SNYK_TOKEN"
-  secret_FTP_USER="FTP_USER"
-  secret_FTP_PASS="FTP_PASS"
+  local secret_GOOGLE_CHAT_WEBHOOK="GOOGLE_CHAT_WEBHOOK"
+  local secret_GH_TOKEN_REPO_AND_PROJECT="GH_TOKEN_REPO_AND_PROJECT"
+  local secret_DOCKERHUB_USER="DOCKERHUB_USER"
+  local secret_DOCKERHUB_PASS="DOCKERHUB_PASS"
+  local secret_SNYK_TOKEN="SNYK_TOKEN"
+  local secret_FTP_USER="FTP_USER"
+  local secret_FTP_PASS="FTP_PASS"
 
   echo -e "$LOG_INFO Create secrets"
 
@@ -173,7 +174,7 @@ function secrets() {
 # @example
 #    listDependabotPRs
 function listDependabotPRs() {
-  dependabotLabel="dependencies"
+  local dependabotLabel="dependencies"
 
   echo -e "$LOG_INFO List ${P}all open${D} Pull Requests from dependabot"
   gh pr list --label "$dependabotLabel"

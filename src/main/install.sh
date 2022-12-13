@@ -33,13 +33,13 @@ set -o nounset
 # set -o xtrace
 
 
-LOG_DONE="[\e[32mDONE\e[0m]"
-LOG_INFO="[\e[34mINFO\e[0m]"
+readonly LOG_DONE="[\e[32mDONE\e[0m]"
+readonly LOG_INFO="[\e[34mINFO\e[0m]"
 
 
-TEMP_PATH="/tmp/jarvis"
-REPO_PATH="/opt/jarvis"
-BIN="/usr/bin/jarvis"
+readonly TEMP_PATH="/tmp/jarvis"
+readonly REPO_PATH="/opt/jarvis"
+readonly BIN="/usr/bin/jarvis"
 
 
 echo -e "$LOG_INFO Run preparations"

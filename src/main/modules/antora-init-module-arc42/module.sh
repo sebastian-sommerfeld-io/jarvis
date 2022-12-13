@@ -25,7 +25,7 @@ set -o nounset
 # set -o xtrace
 
 
-DIR="modules"
+readonly DIR="modules"
 
 
 if [ -z "$1" ]; then
@@ -33,11 +33,19 @@ if [ -z "$1" ]; then
   echo -e "$LOG_ERROR exit" && exit 8
 fi
 
+
+echo -e "$LOG_INFO ======================================================================================================="
 echo -e "$LOG_INFO Add Arc42 module"
 echo -e "$LOG_INFO Current workdir = $(pwd)"
+if [ "$IS_DEV" = "true" ]; then
+  echo -e "$LOG_WARN ${Y}Running from local development project${D}"
+fi
+echo -e "$LOG_INFO ======================================================================================================="
+
 
 current_dir="$(pwd)"
 current_dir="${current_dir##*/}"
+readonly current_dir
 if [ "$current_dir" != "$DIR" ]; then
   echo -e "$LOG_ERROR The current directory is expected to be $Y$DIR$D ... Instead detected $Y$current_dir$D"
   echo -e "$LOG_ERROR exit" && exit 8
