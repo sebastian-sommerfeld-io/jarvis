@@ -54,6 +54,7 @@ GITHUB_TOKEN=$(cat "$TOKEN_FILE")
 
 
 MENU_OPTION_SECRETS="add_secrets"
+MENU_OPTION_DEPENDABOT_PR="list_dependabot_pull_requests"
 
 
 # @description Facade to map ``gh`` command to the local docker container. The actual github-cli
@@ -170,6 +171,23 @@ function secrets() {
 }
 
 
+# @description Function to handle to list all Pull Requests from Dependabot and all unassigned
+# Pull Requests from Dependabot. Affected Pull Requests are labeled 'dependencies' automatically by
+# Dependabot.
+#
+# @example
+#    listDependabotPRs
+function listDependabotPRs() {
+  dependabotLabel="dependencies"
+
+  echo -e "$LOG_INFO List ${P}all${D} Pull Requests from dependabot"
+  gh pr list --label "$dependabotLabel"
+
+  echo -e "$LOG_INFO List ${P}unassinged${D} Pull Requests from dependabot"
+  gh pr list --search "no:assignee label:$dependabotLabel"
+}
+
+
 echo -e "$LOG_INFO Github CLI options"
 echo -e "$LOG_INFO Current workcurrent_dir = $(pwd)"
 
@@ -186,9 +204,10 @@ fi
 echo -e "$LOG_INFO ======================================================================================================="
 
 echo -e "$LOG_INFO ${Y}Github CLI - Menu${D}"
-select option in "$MENU_OPTION_SECRETS"; do
+select option in "$MENU_OPTION_SECRETS" "$MENU_OPTION_DEPENDABOT_PR"; do
   case "$option" in
     "$MENU_OPTION_SECRETS" ) secrets ;;
+    "$MENU_OPTION_DEPENDABOT_PR" ) listDependabotPRs ;;
   esac
 
   break
