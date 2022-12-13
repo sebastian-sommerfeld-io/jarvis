@@ -42,6 +42,7 @@ jarvis
 * <<_setup,setUp>>
 * <<_teardown,tearDown>>
 * <<_secrets,secrets>>
+* <<_listdependabotprs,listDependabotPRs>>
 
 === gh
 
@@ -93,4 +94,17 @@ github repository.
 [,bash]
 ----
 secrets
+----
+
+=== listDependabotPRs
+
+Function to handle to list all Pull Requests from Dependabot and all unassigned
+Pull Requests from Dependabot. Affected Pull Requests are labeled 'dependencies' automatically by
+Dependabot.
+
+==== Example
+
+[,bash]
+----
+listDependabotPRs
 ----
