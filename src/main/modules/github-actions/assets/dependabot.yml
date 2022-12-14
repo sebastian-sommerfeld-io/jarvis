@@ -18,3 +18,7 @@ updates:
     directory: "src/main"
     schedule:
       interval: "weekly"
+  # - package-ecosystem: "docker"
+  #   directory: "some/other/folder"
+  #   schedule:
+  #     interval: "weekly"
