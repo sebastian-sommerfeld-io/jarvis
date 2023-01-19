@@ -1,8 +1,8 @@
-* `xref:AUTO-GENERATED:bash-docs/src/main/modules/antora-init-module-arc42/module-sh.adoc[src/main/modules/antora-init-module-arc42/module.sh]`
+* `xref:AUTO-GENERATED:bash-docs/src/main/install-sh.adoc[src/main/install.sh]`
+* `xref:AUTO-GENERATED:bash-docs/src/main/modules/ssh-create-keypair/module-sh.adoc[src/main/modules/ssh-create-keypair/module.sh]`
+* `xref:AUTO-GENERATED:bash-docs/src/main/modules/update-jarvis/module-sh.adoc[src/main/modules/update-jarvis/module.sh]`
 * `xref:AUTO-GENERATED:bash-docs/src/main/modules/create-bash-script/module-sh.adoc[src/main/modules/create-bash-script/module.sh]`
 * `xref:AUTO-GENERATED:bash-docs/src/main/modules/create-bash-script/assets/template-sh.adoc[src/main/modules/create-bash-script/assets/template.sh]`
-* `xref:AUTO-GENERATED:bash-docs/src/main/modules/ssh-create-keypair/module-sh.adoc[src/main/modules/ssh-create-keypair/module.sh]`
 * `xref:AUTO-GENERATED:bash-docs/src/main/modules/antora-init-component/module-sh.adoc[src/main/modules/antora-init-component/module.sh]`
-* `xref:AUTO-GENERATED:bash-docs/src/main/modules/update-jarvis/module-sh.adoc[src/main/modules/update-jarvis/module.sh]`
+* `xref:AUTO-GENERATED:bash-docs/src/main/modules/antora-init-module-arc42/module-sh.adoc[src/main/modules/antora-init-module-arc42/module.sh]`
 * `xref:AUTO-GENERATED:bash-docs/src/main/jarvis-sh.adoc[src/main/jarvis.sh]`
-* `xref:AUTO-GENERATED:bash-docs/src/main/install-sh.adoc[src/main/install.sh]`
