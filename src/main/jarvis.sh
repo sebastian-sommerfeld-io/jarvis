@@ -37,7 +37,7 @@ fi
 readonly MODULES_PATH
 
 
-docker run --rm mwendler/figlet:latest 'Jarvis CLI'
+docker run --rm mwendler/figlet:latest 'Jarvis'
 
 
 (
