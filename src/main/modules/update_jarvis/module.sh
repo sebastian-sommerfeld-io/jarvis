@@ -24,17 +24,14 @@ set -o nounset
 # set -o xtrace
 
 
+source lib/log.sh
+
+
 if [ -z "$1" ]; then
-  echo -e "$LOG_ERROR Param missing: module path"
-  echo -e "$LOG_ERROR exit" && exit 8
+  LOG_ERROR "Param missing: module path"
+  LOG_ERROR "exit" && exit 8
 fi
 
-echo -e "$LOG_INFO ======================================================================================================="
-echo -e "$LOG_INFO Update jarvis"
-echo -e "$LOG_INFO Current workdir = $(pwd)"
-if [ "$IS_DEV" = "true" ]; then
-  echo -e "$LOG_WARN ${Y}Running from local development project${D}"
-fi
-echo -e "$LOG_INFO ======================================================================================================="
+LOG_HEADER "Update jarvis"
 
 curl https://raw.githubusercontent.com/sebastian-sommerfeld-io/jarvis/main/src/main/install.sh | bash -

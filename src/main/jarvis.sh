@@ -25,10 +25,8 @@ set -o nounset
 # set -o xtrace
 
 
-IS_DEV="false"
-if [ "$0" != "/usr/bin/jarvis" ]; then
-  IS_DEV="true"
-fi
+source lib/log.sh
+
 
 MODULES_PATH=""
 if [ "$0" = "/usr/bin/jarvis" ]; then
@@ -37,34 +35,11 @@ fi
 readonly MODULES_PATH
 
 
-docker run --rm mwendler/figlet:latest 'Jarvis'
+LOG_HEADER "Current workdir = $(pwd)"
 
 
-(
-  if [ "$IS_DEV" = "true" ]; then
-    cd ../../ || exit
-    echo -e "$LOG_WARN ${Y}Running from local development project${D}"
-  else
-    cd /opt/jarvis || exit
-  fi
-
-  JARVIS_VERSION=$(docker run --rm \
-    --volume "$(pwd):$(pwd)" \
-    --workdir "$(pwd)" \
-    mikefarah/yq:latest eval ".version" docs/antora.yml)
-  
-  echo -e "$LOG_INFO ======================================================================================================="
-  echo -e "$LOG_INFO Jarvis version   =  $P$JARVIS_VERSION$D (branch / tag)"
-)
-
-echo -e "$LOG_INFO Current workdir  =  $(pwd)"
-echo -e "$LOG_INFO ======================================================================================================="
-
-echo -e "$LOG_INFO ${Y}What do you want me to do?${D}"
+LOG_INFO "What do you want me to do?"
 select module in "$MODULES_PATH"modules/*; do
-  echo -e "$LOG_INFO Run $P$module$D"
-
-  IS_DEV="$IS_DEV" bash "$module/module.sh" "$module"
-  
+  bash "$module/module.sh" "$module"
   break
 done

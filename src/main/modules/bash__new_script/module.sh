@@ -25,28 +25,26 @@ set -o nounset
 # set -o xtrace
 
 
+source lib/log.sh
+
+
 if [ -z "$1" ]; then
-  echo -e "$LOG_ERROR Param missing: module path"
-  echo -e "$LOG_ERROR exit" && exit 8
+  LOG_ERROR "Param missing: module path"
+  LOG_ERROR "exit" && exit 8
 fi
 
 
-echo -e "$LOG_INFO ======================================================================================================="
-echo -e "$LOG_INFO Create bash script and apply basic config"
-echo -e "$LOG_INFO Current workdir = $(pwd)"
-if [ "$IS_DEV" = "true" ]; then
-  echo -e "$LOG_WARN ${Y}Running from local development project${D}"
-fi
-echo -e "$LOG_INFO ======================================================================================================="
+
+LOG_HEADER "Create bash script and apply basic config"
 
 
-echo -e "$LOG_INFO Enter filename (with ending):"
+LOG_INFO "Enter filename (with ending):"
 read -r FILENAME
 readonly FILENAME
 
 if [ -f "$FILENAME" ]; then
-  echo -e "$LOG_ERROR File $FILENAME already existing"
-  echo -e "$LOG_ERROR exit" && exit 4
+  LOG_ERROR "File $FILENAME already existing"
+  LOG_ERROR "exit" && exit 4
 fi
 
 cp "$1/assets/template.sh" "$FILENAME"
@@ -54,4 +52,4 @@ old="__FILENAME__"
 sed -i "s|$old|$FILENAME|g" "$FILENAME"
 chmod +x "$FILENAME"
 
-echo -e "$LOG_DONE Created $FILENAME"
+LOG_DONE "Created $FILENAME"
