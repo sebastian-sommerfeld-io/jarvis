@@ -30,3 +30,51 @@ NOTE: Don't run this script directly! Always run the `jarvis` command and select
 ----
 jarvis
 ----
+
+== Index
+
+* <<_log_done,LOG_DONE>>
+* <<_log_error,LOG_ERROR>>
+* <<_log_info,LOG_INFO>>
+* <<_log_warn,LOG_WARN>>
+* <<_log_header,LOG_HEADER>>
+
+=== LOG_DONE
+
+Log message with log level = DONE.
+
+==== Arguments
+
+* *...* (String): The line to print.
+
+=== LOG_ERROR
+
+Log message with log level = ERROR.
+
+==== Arguments
+
+* *...* (String): The line to print.
+
+=== LOG_INFO
+
+Log message with log level = INFO.
+
+==== Arguments
+
+* *...* (String): The line to print.
+
+=== LOG_WARN
+
+Log message with log level = WARN.
+
+==== Arguments
+
+* *...* (String): The line to print.
+
+=== LOG_HEADER
+
+Print log output in a header-style.
+
+==== Arguments
+
+* *...* (String): The line to print.
