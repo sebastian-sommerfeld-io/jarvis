@@ -25,9 +25,6 @@ set -o nounset
 # set -o xtrace
 
 
-#source lib/log.sh
-
-
 # @description Log message with log level = DONE.
 #
 # @arg $@ String The line to print.
