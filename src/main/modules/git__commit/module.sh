@@ -43,7 +43,7 @@ read -r COMMIT_MESSAGE
 readonly COMMIT_MESSAGE
 
 LOG_INFO "Git add"
-git add *
+git add ./*
 
 LOG_INFO "Git commit"
 git commit -m "$ISSUE_KEY $COMMIT_MESSAGE"
