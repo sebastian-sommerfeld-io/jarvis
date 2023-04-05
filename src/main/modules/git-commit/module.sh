@@ -77,16 +77,23 @@ if [ -z "$1" ]; then
   LOG_ERROR "exit" && exit 8
 fi
 
-LOG_INFO "Enter Jira Issue Key"
+
+LOG_INFO "Enter Jira issue key"
 read -r ISSUE_KEY
 readonly ISSUE_KEY
 
-LOG_INFO "Enter Commit Message"
+ISSUE_KEY_REGEX='\b[A-Z][A-Z0-9_]+-[1-9][0-9]*'
+if [[ ! "$ISSUE_KEY" =~ $ISSUE_KEY_REGEX ]]; then
+  LOG_ERROR "Jira issue key not valid (wrong syntax)"
+  LOG_ERROR "exit" && exit 8
+fi
+
+LOG_INFO "Enter commit message"
 read -r COMMIT_MESSAGE
 readonly COMMIT_MESSAGE
 
-LOG_INFO "Git add"
+LOG_INFO "Run git add"
 git add ./*
 
-LOG_INFO "Git commit"
+LOG_INFO "Run git commit"
 git commit -m "$ISSUE_KEY $COMMIT_MESSAGE"
