@@ -50,7 +50,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    needs: bash-script-docs
+    needs: generate-docs
 
     steps:
       - name: Checkout code
