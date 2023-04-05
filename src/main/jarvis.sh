@@ -33,6 +33,8 @@ function LOG_DONE() {
   echo -e "$LOG_DONE $1"
 }
 
+export -f LOG_DONE
+
 
 # @description Log message with log level = ERROR.
 #
@@ -41,6 +43,8 @@ function LOG_ERROR() {
   local LOG_ERROR="[\e[1;31mERROR\e[0m]" 
   echo -e "$LOG_ERROR $1"
 }
+
+export -f LOG_ERROR
 
 
 # @description Log message with log level = INFO.
@@ -51,6 +55,8 @@ function LOG_INFO() {
   echo -e "$LOG_INFO $1"
 }
 
+export -f LOG_INFO
+
 
 # @description Log message with log level = WARN.
 #
@@ -59,6 +65,8 @@ function LOG_WARN() {
   local LOG_WARN="[\e[93mWARN\e[0m]"
   echo -e "$LOG_WARN $1"
 }
+
+export -f LOG_WARN
 
 
 # @description Print log output in a header-style.
@@ -69,6 +77,8 @@ function LOG_HEADER() {
   LOG_INFO "$1"
   LOG_INFO "------------------------------------------------------------------------------------"
 }
+
+export -f LOG_HEADER
 
 
 MODULES_PATH=""
