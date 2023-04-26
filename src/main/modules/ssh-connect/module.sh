@@ -44,11 +44,12 @@ function ssh_homelab() {
   readonly REMOTE_HOST_KOBOL="kobol.$FQDN_SUFFIX"
   readonly REMOTE_HOST_MONITORING="monitoring.$FQDN_SUFFIX"
   readonly REMOTE_HOST_SUPERVISOR="supervisor.$FQDN_SUFFIX"
+  readonly REMOTE_HOST_OPENAPPSEC="openappsec.$FQDN_SUFFIX"
 
   local host=""
 
   LOG_INFO "Select host"  
-  select h in "$REMOTE_HOST_CAPRICA" "$REMOTE_HOST_KOBOL" "$REMOTE_HOST_MONITORING" "$REMOTE_HOST_SUPERVISOR"; do
+  select h in "$REMOTE_HOST_CAPRICA" "$REMOTE_HOST_KOBOL" "$REMOTE_HOST_MONITORING" "$REMOTE_HOST_SUPERVISOR" "$REMOTE_HOST_OPENAPPSEC"; do
     host="$h"
     break
   done
