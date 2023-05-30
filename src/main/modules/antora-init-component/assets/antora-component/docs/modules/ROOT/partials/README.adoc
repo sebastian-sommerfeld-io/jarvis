@@ -16,13 +16,7 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 . Every machine is Ubuntu (or at least Debian-based)
 
 == Risks and Technical Debts
-Scale for Probability and Impact: Low, Medium and High
-
-[cols="^1,2,5a,1,1,5a", options="header"]
-|===
-|# |Title |Description |Probability |Impact |Response
-|{counter:usage} |- |- |- |- |-
-|===
+link:{url-project}/issues?q=is%3Aissue+label%3Asecurity%2Crisk+is%3Aopen[All issus labeled as risk (= some sort of risk or a technical debt) or security (= related to security issues)] are tracked as Github issue and carry the respective label.
 
 == Contact
 Feel free to contact me via sebastian@sommerfeld.io or visit my website https://www.sommerfeld.io.
