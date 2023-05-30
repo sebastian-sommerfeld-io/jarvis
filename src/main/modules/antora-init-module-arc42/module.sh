@@ -25,7 +25,7 @@ set -o nounset
 # set -o xtrace
 
 
-readonly DIR="modules"
+readonly EXPECTED_DIR="modules"
 
 
 if [ -z "$1" ]; then
@@ -40,8 +40,8 @@ LOG_HEADER "Add Arc42 module"
 current_dir="$(pwd)"
 current_dir="${current_dir##*/}"
 readonly current_dir
-if [ "$current_dir" != "$DIR" ]; then
-  LOG_ERROR "The current directory is expected to be $Y$DIR$D ... Instead detected $Y$current_dir$D"
+if [ "$current_dir" != "$EXPECTED_DIR" ]; then
+  LOG_ERROR "The current directory is expected to be $Y$EXPECTED_DIR$D ... Instead detected $Y$current_dir$D"
   LOG_ERROR "exit" && exit 8
 fi
 
