@@ -49,10 +49,10 @@ if [ "$current_dir" != "$EXPECTED_DIR" ]; then
 fi
 
 
-cp "$1/assets/workflows/housekeeping-issues-tftpl.yml" "workflows/housekeeping-issues.yml"
+cp "$1/assets/workflows/housekeeping-issues-tpl.yml" "workflows/housekeeping-issues.yml"
 sed -i "s|$PLACEHOLDER_PROJECT_URL|$PROJECT_URL|g" "workflows/housekeeping-issues.yml"
 
-cp "$1/assets/workflows/housekeeping-issues-labels.yml" "workflows/housekeeping-labels.yml"
+cp "$1/assets/workflows/housekeeping-labels-tpl.yml" "workflows/housekeeping-labels.yml"
 
 cp "$1/assets/templates/risk-or-technical-debt.md" "ISSUE_TEMPLATE/risk-or-technical-debt.md"
 cp "$1/assets/templates/user-story.md" "ISSUE_TEMPLATE/user-story.md"
