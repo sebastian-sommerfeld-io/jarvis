@@ -6,7 +6,6 @@
 * `xref:AUTO-GENERATED:bash-docs/src/main/modules/ssh-connect/module-sh.adoc[src/main/modules/ssh-connect/module.sh]`
 * `xref:AUTO-GENERATED:bash-docs/src/main/modules/antora-init-component/module-sh.adoc[src/main/modules/antora-init-component/module.sh]`
 * `xref:AUTO-GENERATED:bash-docs/src/main/modules/ssh-create-keypair/module-sh.adoc[src/main/modules/ssh-create-keypair/module.sh]`
-* `xref:AUTO-GENERATED:bash-docs/src/main/modules/github-repo-housekeeping/module-sh.adoc[src/main/modules/github-repo-housekeeping/module.sh]`
 * `xref:AUTO-GENERATED:bash-docs/src/main/modules/git-commit/module-sh.adoc[src/main/modules/git-commit/module.sh]`
 * `xref:AUTO-GENERATED:bash-docs/src/main/modules/git-push/module-sh.adoc[src/main/modules/git-push/module.sh]`
 * `xref:AUTO-GENERATED:bash-docs/src/main/modules/antora-init-module-arc42/module-sh.adoc[src/main/modules/antora-init-module-arc42/module.sh]`
