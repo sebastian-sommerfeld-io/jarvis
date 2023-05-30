@@ -59,4 +59,4 @@ cp "$1/assets/templates/user-story.md" "ISSUE_TEMPLATE/user-story.md"
 
 cp "$1/assets/templates/PULL_REQUEST_TEMPLATE.md" "PULL_REQUEST_TEMPLATE.md"
 
-LOG_DONE "Created $FILENAME"
+LOG_DONE "Create workflow files and templates"
