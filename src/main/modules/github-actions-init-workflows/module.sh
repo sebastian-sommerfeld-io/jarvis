@@ -50,6 +50,7 @@ fi
 
 
 cp "$1/assets/workflows/ci.yml" "workflows/ci.yml"
+cp "$1/assets/workflows/docs-as-code.yml" "workflows/docs-as-code.yml"
 cp "$1/assets/dependabot.yml" "dependabot.yml"
 
 LOG_WARN "TODO: Add linter definitions to use with $EXPECTED_DIR/workflows/ci.yml"
