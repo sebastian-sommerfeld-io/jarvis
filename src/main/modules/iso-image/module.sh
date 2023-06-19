@@ -50,5 +50,5 @@ LOG_INFO "Creating iso ..."
 sudo dd if="$CD_DRIVE" of="./$DISK_NAME.iso"
 
 LOG_INFO "Update permissions"
-sudo chown "$(id -u):$(id -g)" mrt-scan-2023-06-16.iso
-sudo chmod +x mrt-scan-2023-06-16.iso
+sudo chown "$(id -u):$(id -g)" "$DISK_NAME.iso"
+sudo chmod +x "$DISK_NAME.iso"
