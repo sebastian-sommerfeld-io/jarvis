@@ -10,7 +10,7 @@
 // +-----------------------------------------------+
 
 
-Zora module to add files and commit files to git repo.
+Jarvis module to add files and commit files to git repo.
 
 == Overview
 
@@ -29,5 +29,5 @@ NOTE: Don't run this script directly! Always run the `jarvis` command and select
 [source, bash]
 
 ----
-./module.sh
+jarvis
 ----

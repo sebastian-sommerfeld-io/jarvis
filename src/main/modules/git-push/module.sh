@@ -1,6 +1,6 @@
 #!/bin/bash
 # @file module.sh
-# @brief Zora module to push files to a remote git repo.
+# @brief Jarvis module to push files to a remote git repo.
 #
 # @description Push comitted files to a remote git repo.
 #
@@ -14,7 +14,7 @@
 #
 # [source, bash]
 # ```
-# ./module.sh
+# jarvis
 # ```
 
 

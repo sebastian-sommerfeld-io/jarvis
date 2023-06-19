@@ -10,11 +10,12 @@
 // +-----------------------------------------------+
 
 
-Jarvis module to push files to a remote git repo.
+Jarvis module to create an iso image from a CD.
 
 == Overview
 
-Push comitted files to a remote git repo.
+Create an iso image from a CD. The module expects the CD drive at a specific path
+(`/dev/cdrom`). This matches my home setup on my workstation (`caprica`).
 
 NOTE: Don't run this script directly! Always run the `jarvis` command and select the module of choice.
 
