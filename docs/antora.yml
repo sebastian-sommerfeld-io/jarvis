@@ -1,7 +1,7 @@
 ---
 name: jarvis-cli-docs
 title: Jarvis
-version: main
+version: create-iso-image
 start_page: ROOT:index.adoc
 nav:
   - modules/ROOT/nav.adoc

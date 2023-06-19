@@ -29,5 +29,5 @@ NOTE: Don't run this script directly! Always run the `jarvis` command and select
 [source, bash]
 
 ----
-./module.sh
+jarvis
 ----
