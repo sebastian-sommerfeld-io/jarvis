@@ -10,7 +10,7 @@
 // +-----------------------------------------------+
 
 
-Zora module to push files to a remote git repo.
+Jarvis module to push files to a remote git repo.
 
 == Overview
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 # @file module.sh
-# @brief Zora module to add files and commit files to git repo.
+# @brief Jarvis module to add files and commit files to git repo.
 #
 # @description The command prompts for a Jira Issue Key and then prompts for a commit message. The command validates
 # the syntax of the Jira Issue Key and then concatenates these inputs into a single commit message. Then ``git add *``
@@ -16,7 +16,7 @@
 #
 # [source, bash]
 # ```
-# ./module.sh
+# jarvis
 # ```
 
 

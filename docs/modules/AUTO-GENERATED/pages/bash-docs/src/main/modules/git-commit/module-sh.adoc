@@ -10,7 +10,7 @@
 // +-----------------------------------------------+
 
 
-Zora module to add files and commit files to git repo.
+Jarvis module to add files and commit files to git repo.
 
 == Overview
 
