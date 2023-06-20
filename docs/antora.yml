@@ -1,7 +1,7 @@
 ---
 name: jarvis-cli-docs
 title: Jarvis
-version: bash-logging-module
+version: main
 start_page: ROOT:index.adoc
 nav:
   - modules/ROOT/nav.adoc
