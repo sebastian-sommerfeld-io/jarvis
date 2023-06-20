@@ -9,7 +9,12 @@
 # [source, bash]
 # ```
 # #!/bin/bash
+#
 # # Some code if needed but make sure to include this module somewhere at the top of your script
+#
+# mkdir -p /tmp/bash/lib
+# curl -sL https://raw.githubusercontent.com/sebastian-sommerfeld-io/jarvis/bash-logging-module/src/main/modules/bash-script/assets/lib/log.sh --output /tmp/bash/lib/log.sh
+# source /tmp/bash/lib/log.sh
 # ```
 #
 # CAUTION: This script is a module an is not intended to run on its own. Include in script and
@@ -37,37 +42,44 @@ export D="\e[0m"
 export G="\033[1;30m"
 
 
-
 # @description Log message with log level = ERROR.
 #
 # @arg $@ String The line to print.
 function LOG_ERROR() {
-  echo -e "$LOG_ERROR $1"
+  echo -e "$LOG_ERROR $(date '+%Y-%m-%d %H:%M:%S') - $1"
 }
+
+export -f LOG_ERROR
 
 
 # @description Log message with log level = INFO.
 #
 # @arg $@ String The line to print.
 function LOG_INFO() {
-  echo -e "$LOG_INFO $1"
+  echo -e "$LOG_INFO $(date '+%Y-%m-%d %H:%M:%S') - $1"
 }
+
+export -f LOG_INFO
 
 
 # @description Log message with log level = DONE.
 #
 # @arg $@ String The line to print.
 function LOG_DONE() {
-  echo -e "$LOG_DONE $1"
+  echo -e "$LOG_DONE $(date '+%Y-%m-%d %H:%M:%S') - $1"
 }
+
+export -f LOG_DONE
 
 
 # @description Log message with log level = WARN.
 #
 # @arg $@ String The line to print.
 function LOG_WARN() {
-  echo -e "$LOG_WARN $1"
+  echo -e "$LOG_WARN $(date '+%Y-%m-%d %H:%M:%S') - $1"
 }
+
+export -f LOG_WARN
 
 
 # @description Print log output in a header-style.
@@ -78,3 +90,5 @@ function LOG_HEADER() {
   LOG_INFO "$1"
   LOG_INFO "------------------------------------------------------------------------"
 }
+
+export -f LOG_HEADER

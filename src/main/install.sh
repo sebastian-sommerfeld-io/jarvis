@@ -33,8 +33,11 @@ set -o nounset
 # set -o xtrace
 
 
-readonly LOG_DONE="[\e[32mDONE\e[0m]"
-readonly LOG_INFO="[\e[34mINFO\e[0m]"
+# Download and include logging library
+mkdir -p /tmp/bash/lib
+curl -sL https://raw.githubusercontent.com/sebastian-sommerfeld-io/jarvis/bash-logging-module/src/main/modules/bash-script/assets/lib/log.sh --output /tmp/bash/lib/log.sh
+source /tmp/bash/lib/log.sh
+
 
 
 readonly TEMP_PATH="/tmp/jarvis"
@@ -42,18 +45,18 @@ readonly REPO_PATH="/opt/jarvis"
 readonly BIN="/usr/bin/jarvis"
 
 
-echo -e "$LOG_INFO Run preparations"
+LOG_INFO "Run preparations"
 sudo rm -rf "$TEMP_PATH"
 sudo rm -rf "$REPO_PATH"
 sudo rm -rf "$BIN"
 
 
-echo -e "$LOG_INFO Clone Jarvis Repository"
+LOG_INFO "Clone Jarvis Repository"
 git clone https://github.com/sebastian-sommerfeld-io/jarvis.git "$TEMP_PATH"
 sudo mv "$TEMP_PATH" "$REPO_PATH"
 
-echo -e "$LOG_INFO Clone Jarvis Repository"
+LOG_INFO "Clone Jarvis Repository"
 sudo ln -s "$REPO_PATH/src/main/jarvis.sh" "$BIN"
 chmod +x "$BIN"
 
-echo -e "$LOG_DONE Jarvis setup complete"
+LOG_DONE "Jarvis setup complete"

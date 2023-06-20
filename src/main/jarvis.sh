@@ -25,60 +25,10 @@ set -o nounset
 # set -o xtrace
 
 
-# @description Log message with log level = DONE.
-#
-# @arg $@ String The line to print.
-function LOG_DONE() {
-  local LOG_DONE="[\e[32mDONE\e[0m]"
-  echo -e "$LOG_DONE $1"
-}
-
-export -f LOG_DONE
-
-
-# @description Log message with log level = ERROR.
-#
-# @arg $@ String The line to print.
-function LOG_ERROR() {
-  local LOG_ERROR="[\e[1;31mERROR\e[0m]" 
-  echo -e "$LOG_ERROR $1"
-}
-
-export -f LOG_ERROR
-
-
-# @description Log message with log level = INFO.
-#
-# @arg $@ String The line to print.
-function LOG_INFO() {
-  local LOG_INFO="[\e[34mINFO\e[0m]"
-  echo -e "$LOG_INFO $1"
-}
-
-export -f LOG_INFO
-
-
-# @description Log message with log level = WARN.
-#
-# @arg $@ String The line to print.
-function LOG_WARN() {
-  local LOG_WARN="[\e[93mWARN\e[0m]"
-  echo -e "$LOG_WARN $1"
-}
-
-export -f LOG_WARN
-
-
-# @description Print log output in a header-style.
-#
-# @arg $@ String The line to print.
-function LOG_HEADER() {
-  LOG_INFO "------------------------------------------------------------------------------------"
-  LOG_INFO "$1"
-  LOG_INFO "------------------------------------------------------------------------------------"
-}
-
-export -f LOG_HEADER
+# Download and include logging library
+mkdir -p /tmp/bash/lib
+curl -sL https://raw.githubusercontent.com/sebastian-sommerfeld-io/jarvis/bash-logging-module/src/main/modules/bash-script/assets/lib/log.sh --output /tmp/bash/lib/log.sh
+source /tmp/bash/lib/log.sh
 
 
 MODULES_PATH=""
