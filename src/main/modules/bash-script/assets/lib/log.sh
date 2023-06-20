@@ -12,9 +12,10 @@
 #
 # # Some code if needed but make sure to include this module somewhere at the top of your script
 #
+# # Download and include logging library
 # rm -rf /tmp/bash-lib
 # mkdir -p /tmp/bash-lib
-# curl -sL https://raw.githubusercontent.com/sebastian-sommerfeld-io/jarvis/bash-logging-module/src/main/modules/bash-script/assets/lib/log.sh --output /tmp/bash-lib/log.sh
+# curl -sL https://raw.githubusercontent.com/sebastian-sommerfeld-io/jarvis/main/src/main/modules/bash-script/assets/lib/log.sh --output /tmp/bash-lib/log.sh
 # source /tmp/bash-lib/log.sh
 # ```
 #
@@ -43,11 +44,17 @@ export D="\e[0m"
 export G="\033[1;30m"
 
 
+# @description Private function to get the current date (propperly formated) to include in log lines.
+function __date() {
+  echo -e "${G}[$(date '+%Y-%m-%d %H:%M:%S')]${D}"
+}
+
+
 # @description Log message with log level = ERROR.
 #
 # @arg $@ String The line to print.
 function LOG_ERROR() {
-  echo -e "$LEVEL_ERROR [$(date '+%Y-%m-%d %H:%M:%S')] $1"
+  echo -e "$LEVEL_ERROR $(__date) $1"
 }
 
 export -f LOG_ERROR
@@ -57,7 +64,7 @@ export -f LOG_ERROR
 #
 # @arg $@ String The line to print.
 function LOG_INFO() {
-  echo -e "$LEVEL_INFO [$(date '+%Y-%m-%d %H:%M:%S')] $1"
+  echo -e "$LEVEL_INFO $(__date) $1"
 }
 
 export -f LOG_INFO
@@ -67,7 +74,7 @@ export -f LOG_INFO
 #
 # @arg $@ String The line to print.
 function LOG_DONE() {
-  echo -e "$LEVEL_DONE [$(date '+%Y-%m-%d %H:%M:%S')] $1"
+  echo -e "$LEVEL_DONE $(__date) $1"
 }
 
 export -f LOG_DONE
@@ -77,7 +84,7 @@ export -f LOG_DONE
 #
 # @arg $@ String The line to print.
 function LOG_WARN() {
-  echo -e "$LEVEL_WARN [$(date '+%Y-%m-%d %H:%M:%S')] $1"
+  echo -e "$LEVEL_WARN $(__date) $1"
 }
 
 export -f LOG_WARN

@@ -74,9 +74,13 @@ function newScript() {
 #    printLogSnippet
 function printLogSnippet() {
   LOG_INFO "Print snippet to download and include the bash logging module"
-  echo
-  echo "THE SNIPPET"
-  echo
+  echo -e "$P"
+  echo "# Download and include logging library"
+  echo "rm -rf /tmp/bash-lib"
+  echo "mkdir -p /tmp/bash-lib"
+  echo "curl -sL https://raw.githubusercontent.com/sebastian-sommerfeld-io/jarvis/main/src/main/modules/bash-script/assets/lib/log.sh --output /tmp/bash-lib/log.sh"
+  echo "source /tmp/bash-lib/log.sh"
+  echo -e "$D"
 }
 
 
