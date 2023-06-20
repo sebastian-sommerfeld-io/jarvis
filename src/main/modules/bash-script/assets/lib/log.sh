@@ -2,10 +2,9 @@
 # @file log.sh
 # @brief Bash module which provides utility functions for logging.
 #
-# @description The script is bash module which provides a logging library for Bash scripts. This
-# module is part of the link:https://github.com/sebastian-sommerfeld-io/jarvis[Jarvis project].
-#
-# It allows you to log messages with different log levels (debug, info, warning and error). 
+# @description This script is bash module which provides a logging library for Bash scripts. This
+# module is part of the link:https://github.com/sebastian-sommerfeld-io/jarvis[Jarvis project]. It
+# allows you to log messages with different log levels (debug, info, warning and error). 
 #
 # This module is intended to show log information to user who interacts with the bash command line.
 # So all output is written to ``stdout``. By default this module does not write to any files. To log
@@ -31,6 +30,10 @@
 # === Script Arguments
 #
 # The script does not accept any parameters.
+#
+# === See also
+#
+# Logging library module on Github: https://github.com/sebastian-sommerfeld-io/jarvis/blob/main/src/main/modules/bash-script/assets/lib/log.sh
 
 
 set -o errexit
