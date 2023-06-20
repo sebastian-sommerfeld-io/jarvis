@@ -25,6 +25,7 @@ Include in your script by using the following snippet:
 
 # Some code if needed but make sure to include this module somewhere at the top of your script
 
+# Download and include logging library
 rm -rf /tmp/bash-lib
 mkdir -p /tmp/bash-lib
 curl -sL https://raw.githubusercontent.com/sebastian-sommerfeld-io/jarvis/main/src/main/modules/bash-script/assets/lib/log.sh --output /tmp/bash-lib/log.sh
@@ -40,11 +41,16 @@ The script does not accept any parameters.
 
 == Index
 
+* <<___date,__date>>
 * <<_log_error,LOG_ERROR>>
 * <<_log_info,LOG_INFO>>
 * <<_log_done,LOG_DONE>>
 * <<_log_warn,LOG_WARN>>
 * <<_log_header,LOG_HEADER>>
+
+=== __date
+
+Private function to get the current date (propperly formated) to include in log lines.
 
 === LOG_ERROR
 
