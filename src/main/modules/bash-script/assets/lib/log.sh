@@ -2,10 +2,16 @@
 # @file log.sh
 # @brief Bash module which provides utility functions for logging.
 #
-# @description The script is bash module which provides utility functions for logging. This
+# @description The script is bash module which provides a logging library for Bash scripts. This
 # module is part of the link:https://github.com/sebastian-sommerfeld-io/jarvis[Jarvis project].
 #
-# Include in your script by using the following snippet:
+# It allows you to log messages with different log levels (debug, info, warning and error). 
+#
+# This module is intended to show log information to user who interacts with the bash command line.
+# So all output is written to ``stdout``. By default this module does not write to any files. To log
+# to files, redirect the output to a file of your choice (``LOG_INFO "Some log line" >> some.log``). 
+#
+# To use the logger library, include the following line in your Bash script:
 # [source, bash]
 # ```
 # #!/bin/bash
@@ -51,7 +57,7 @@ function __date() {
 export -f __date
 
 
-# @description Log message with log level = ERROR.
+# @description Log a message with log level = ERROR.
 #
 # @arg $@ String The line to print.
 function LOG_ERROR() {
@@ -61,7 +67,7 @@ function LOG_ERROR() {
 export -f LOG_ERROR
 
 
-# @description Log message with log level = INFO.
+# @description Log a message with log level = INFO.
 #
 # @arg $@ String The line to print.
 function LOG_INFO() {
@@ -71,7 +77,7 @@ function LOG_INFO() {
 export -f LOG_INFO
 
 
-# @description Log message with log level = DONE.
+# @description Log a message with log level = DONE.
 #
 # @arg $@ String The line to print.
 function LOG_DONE() {
@@ -81,7 +87,7 @@ function LOG_DONE() {
 export -f LOG_DONE
 
 
-# @description Log message with log level = WARN.
+# @description Log a message with log level = WARN.
 #
 # @arg $@ String The line to print.
 function LOG_WARN() {
