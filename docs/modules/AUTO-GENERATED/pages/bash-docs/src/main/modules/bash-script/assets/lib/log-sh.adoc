@@ -22,7 +22,12 @@ Include in your script by using the following snippet:
 
 ----
 #!/bin/bash
+
 # Some code if needed but make sure to include this module somewhere at the top of your script
+
+mkdir -p /tmp/bash/lib
+curl -sL https://raw.githubusercontent.com/sebastian-sommerfeld-io/jarvis/bash-logging-module/src/main/modules/bash-script/assets/lib/log.sh --output /tmp/bash/lib/log.sh
+source /tmp/bash/lib/log.sh
 ----
 
 CAUTION: This script is a module an is not intended to run on its own. Include in script and
