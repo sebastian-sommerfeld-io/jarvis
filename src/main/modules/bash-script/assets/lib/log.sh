@@ -12,9 +12,10 @@
 #
 # # Some code if needed but make sure to include this module somewhere at the top of your script
 #
-# mkdir -p /tmp/bash/lib
-# curl -sL https://raw.githubusercontent.com/sebastian-sommerfeld-io/jarvis/bash-logging-module/src/main/modules/bash-script/assets/lib/log.sh --output /tmp/bash/lib/log.sh
-# source /tmp/bash/lib/log.sh
+# rm -rf /tmp/bash-lib
+# mkdir -p /tmp/bash-lib
+# curl -sL https://raw.githubusercontent.com/sebastian-sommerfeld-io/jarvis/bash-logging-module/src/main/modules/bash-script/assets/lib/log.sh --output /tmp/bash-lib/log.sh
+# source /tmp/bash-lib/log.sh
 # ```
 #
 # CAUTION: This script is a module an is not intended to run on its own. Include in script and
@@ -32,10 +33,10 @@ set -o nounset
 
 
 
-export LOG_DONE="[\e[32mDONE\e[0m]"
-export LOG_ERROR="[\e[1;31mERROR\e[0m]"
-export LOG_INFO="[\e[34mINFO\e[0m]"
-export LOG_WARN="[\e[93mWARN\e[0m]"
+export LEVEL_DONE="[\e[32mDONE\e[0m]"
+export LEVEL_ERROR="[\e[1;31mERROR\e[0m]"
+export LEVEL_INFO="[\e[34mINFO\e[0m]"
+export LEVEL_WARN="[\e[93mWARN\e[0m]"
 export Y="\e[93m"
 export P="\e[35m"
 export D="\e[0m"
@@ -46,7 +47,7 @@ export G="\033[1;30m"
 #
 # @arg $@ String The line to print.
 function LOG_ERROR() {
-  echo -e "$LOG_ERROR $(date '+%Y-%m-%d %H:%M:%S') - $1"
+  echo -e "$LEVEL_ERROR [$(date '+%Y-%m-%d %H:%M:%S')] $1"
 }
 
 export -f LOG_ERROR
@@ -56,7 +57,7 @@ export -f LOG_ERROR
 #
 # @arg $@ String The line to print.
 function LOG_INFO() {
-  echo -e "$LOG_INFO $(date '+%Y-%m-%d %H:%M:%S') - $1"
+  echo -e "$LEVEL_INFO [$(date '+%Y-%m-%d %H:%M:%S')] $1"
 }
 
 export -f LOG_INFO
@@ -66,7 +67,7 @@ export -f LOG_INFO
 #
 # @arg $@ String The line to print.
 function LOG_DONE() {
-  echo -e "$LOG_DONE $(date '+%Y-%m-%d %H:%M:%S') - $1"
+  echo -e "$LEVEL_DONE [$(date '+%Y-%m-%d %H:%M:%S')] $1"
 }
 
 export -f LOG_DONE
@@ -76,7 +77,7 @@ export -f LOG_DONE
 #
 # @arg $@ String The line to print.
 function LOG_WARN() {
-  echo -e "$LOG_WARN $(date '+%Y-%m-%d %H:%M:%S') - $1"
+  echo -e "$LEVEL_WARN [$(date '+%Y-%m-%d %H:%M:%S')] $1"
 }
 
 export -f LOG_WARN
