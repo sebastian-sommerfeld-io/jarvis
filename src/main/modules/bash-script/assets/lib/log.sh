@@ -33,7 +33,6 @@ set -o nounset
 # set -o xtrace
 
 
-
 export LEVEL_DONE="[\e[32mDONE\e[0m]"
 export LEVEL_ERROR="[\e[1;31mERROR\e[0m]"
 export LEVEL_INFO="[\e[34mINFO\e[0m]"
@@ -48,6 +47,8 @@ export G="\033[1;30m"
 function __date() {
   echo -e "${G}$(date '+%Y-%m-%d %H:%M:%S')${D}"
 }
+
+export -f __date
 
 
 # @description Log message with log level = ERROR.
