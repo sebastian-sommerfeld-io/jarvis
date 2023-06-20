@@ -34,9 +34,10 @@ set -o nounset
 
 
 # Download and include logging library
-mkdir -p /tmp/bash/lib
-curl -sL https://raw.githubusercontent.com/sebastian-sommerfeld-io/jarvis/bash-logging-module/src/main/modules/bash-script/assets/lib/log.sh --output /tmp/bash/lib/log.sh
-source /tmp/bash/lib/log.sh
+rm -rf /tmp/bash-lib
+mkdir -p /tmp/bash-lib
+curl -sL https://raw.githubusercontent.com/sebastian-sommerfeld-io/jarvis/bash-logging-module/src/main/modules/bash-script/assets/lib/log.sh --output /tmp/bash-lib/log.sh
+source /tmp/bash-lib/log.sh
 
 
 
