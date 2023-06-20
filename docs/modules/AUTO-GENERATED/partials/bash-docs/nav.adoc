@@ -1,7 +1,8 @@
+* `xref:AUTO-GENERATED:bash-docs/src/main/modules/bash-script/assets/template-sh.adoc[src/main/modules/bash-script/assets/template.sh]`
+* `xref:AUTO-GENERATED:bash-docs/src/main/modules/bash-script/assets/lib/log-sh.adoc[src/main/modules/bash-script/assets/lib/log.sh]`
+* `xref:AUTO-GENERATED:bash-docs/src/main/modules/bash-script/module-sh.adoc[src/main/modules/bash-script/module.sh]`
 * `xref:AUTO-GENERATED:bash-docs/src/main/modules/antora-init-module-arc42/module-sh.adoc[src/main/modules/antora-init-module-arc42/module.sh]`
 * `xref:AUTO-GENERATED:bash-docs/src/main/modules/git-push/module-sh.adoc[src/main/modules/git-push/module.sh]`
-* `xref:AUTO-GENERATED:bash-docs/src/main/modules/bash-new-script/assets/template-sh.adoc[src/main/modules/bash-new-script/assets/template.sh]`
-* `xref:AUTO-GENERATED:bash-docs/src/main/modules/bash-new-script/module-sh.adoc[src/main/modules/bash-new-script/module.sh]`
 * `xref:AUTO-GENERATED:bash-docs/src/main/modules/ssh-connect/module-sh.adoc[src/main/modules/ssh-connect/module.sh]`
 * `xref:AUTO-GENERATED:bash-docs/src/main/modules/antora-init-component/module-sh.adoc[src/main/modules/antora-init-component/module.sh]`
 * `xref:AUTO-GENERATED:bash-docs/src/main/modules/ssh-connect-setup-passwordless/module-sh.adoc[src/main/modules/ssh-connect-setup-passwordless/module.sh]`
