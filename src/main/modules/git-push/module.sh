@@ -8,7 +8,7 @@
 #
 # === Script Arguments
 #
-# * *$1* (string): The path from jarvis.sh to this module (modules/<MODULE_NAME>)
+# * *$1* (string): The path from jarvis.sh to this module (``modules/<MODULE_NAME>``)
 #
 # === Script Example
 #
