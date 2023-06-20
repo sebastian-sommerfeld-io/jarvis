@@ -46,7 +46,7 @@ export G="\033[1;30m"
 
 # @description Private function to get the current date (propperly formated) to include in log lines.
 function __date() {
-  echo -e "${G}[$(date '+%Y-%m-%d %H:%M:%S')]${D}"
+  echo -e "${G}$(date '+%Y-%m-%d %H:%M:%S')${D}"
 }
 
 
