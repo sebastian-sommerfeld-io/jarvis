@@ -14,10 +14,16 @@ Bash module which provides utility functions for logging.
 
 == Overview
 
-The script is bash module which provides utility functions for logging. This
+The script is bash module which provides a logging library for Bash scripts. This
 module is part of the link:https://github.com/sebastian-sommerfeld-io/jarvis[Jarvis project].
 
-Include in your script by using the following snippet:
+It allows you to log messages with different log levels (debug, info, warning and error).
+
+This module is intended to show log information to user who interacts with the bash command line.
+So all output is written to `stdout`. By default this module does not write to any files. To log
+to files, redirect the output to a file of your choice (`LOG_INFO "Some log line" >> some.log`).
+
+To use the logger library, include the following line in your Bash script:
 [source, bash]
 
 ----
@@ -54,7 +60,7 @@ Private function to get the current date (propperly formated) to include in log 
 
 === LOG_ERROR
 
-Log message with log level = ERROR.
+Log a message with log level = ERROR.
 
 ==== Arguments
 
@@ -62,7 +68,7 @@ Log message with log level = ERROR.
 
 === LOG_INFO
 
-Log message with log level = INFO.
+Log a message with log level = INFO.
 
 ==== Arguments
 
@@ -70,7 +76,7 @@ Log message with log level = INFO.
 
 === LOG_DONE
 
-Log message with log level = DONE.
+Log a message with log level = DONE.
 
 ==== Arguments
 
@@ -78,7 +84,7 @@ Log message with log level = DONE.
 
 === LOG_WARN
 
-Log message with log level = WARN.
+Log a message with log level = WARN.
 
 ==== Arguments
 
