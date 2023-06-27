@@ -21,14 +21,13 @@ Bash utility to assist with day to day tasks just like J.A.R.V.I.S. does for Iro
 image:{github-actions-url}/{job-generate-docs}/{badge}[Github Badge, link={github-actions-url}/{job-generate-docs}]
 image:{github-actions-url}/{job-ci}/{badge}[Github Badge, link={github-actions-url}/{job-ci}]
 
-* Github Repository -> {url-project}
-* Documentation -> https://www.sommerfeld.io/docs/docker-images/{project-name}-docs/main
-* Where to file issues -> {url-project}/issues
-
 == About this project
 This project assists with daily tasks and helps reducing time and overhead by automating some simple tasks like initializing a new link:https://antora.org[Antora] component or creating SSH keypairs.
 
 Jarvis uses a modular achitecture to add new featues. This allows every module to choose the toolset on its own (Plain Bash scripts, Docker, Groovy, ...) as long as it is started by a Bash command.
+
+* Github Repository -> {url-project}
+* Where to file issues -> {url-project}/issues
 
 == How to use this project
 To install this project simply use the bootstrap script `curl https://raw.githubusercontent.com/sebastian-sommerfeld-io/jarvis/main/src/main/install.sh | bash -`.
