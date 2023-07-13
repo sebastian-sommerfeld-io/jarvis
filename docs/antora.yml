@@ -1,5 +1,5 @@
 ---
-name: jarvis-cli-docs
+name: jarvis
 title: Jarvis
 version: main
 start_page: ROOT:index.adoc
