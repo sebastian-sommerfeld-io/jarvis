@@ -33,17 +33,15 @@ fi
 LOG_HEADER "Create Antora component"
 
 
-LOG_INFO "Enter component title:"
+LOG_INFO "Enter Antora component title (= page title of the index.adoc file):"
 read -r COMPONENT_TITLE
 readonly COMPONENT_TITLE
 
-LOG_INFO "Enter component name (url slug):"
-read -r COMPONENT_NAME
-readonly COMPONENT_NAME
-
 LOG_INFO "Enter Github project name (without path, just the name ... drop 'sebastian-sommerfeld-io/')"
+LOG_INFO "This is also used as Antora component name"
 read -r GITHUB_PROJECT_NAME
 readonly GITHUB_PROJECT_NAME
+readonly COMPONENT_NAME="$GITHUB_PROJECT_NAME"
 
 LOG_INFO "Copy Antora template"
 cp -a "$1/assets/antora-component/docs" "docs"
