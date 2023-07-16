@@ -6,6 +6,7 @@
 * `xref:AUTO-GENERATED:bash-docs/src/main/modules/bash-script/assets/lib/log-sh.adoc[src/main/modules/bash-script/assets/lib/log.sh]`
 * `xref:AUTO-GENERATED:bash-docs/src/main/modules/github-actions-init-workflows/module-sh.adoc[src/main/modules/github-actions-init-workflows/module.sh]`
 * `xref:AUTO-GENERATED:bash-docs/src/main/modules/git-push/module-sh.adoc[src/main/modules/git-push/module.sh]`
+* `xref:AUTO-GENERATED:bash-docs/src/main/modules/gitpod/module-sh.adoc[src/main/modules/gitpod/module.sh]`
 * `xref:AUTO-GENERATED:bash-docs/src/main/modules/antora-init-component/module-sh.adoc[src/main/modules/antora-init-component/module.sh]`
 * `xref:AUTO-GENERATED:bash-docs/src/main/modules/asciidoc-files/module-sh.adoc[src/main/modules/asciidoc-files/module.sh]`
 * `xref:AUTO-GENERATED:bash-docs/src/main/modules/git-commit/module-sh.adoc[src/main/modules/git-commit/module.sh]`
