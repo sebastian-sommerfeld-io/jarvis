@@ -1,0 +1,19 @@
+= ADR: Give me a name !!!
+Sebastian Sommerfeld <sebastian@sommerfeld.io>
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+
+[cols="1,1,1",options="header"]
+|===
+|Proposed on |Accepted on |Declined on
+|2023-??-??  |-  |-
+|===
+
+== Context
+Replace me with some thought about the following questions: Why do we think about this in the first place? What was the trigger? Why is this worth an ADR? WHy is this not just a smaller / local descision for a single repo? Why should this affect all repositories / future considerations?
+
+== Decision
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
+
+== Consequences
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
