@@ -10,11 +10,12 @@
 // +-----------------------------------------------+
 
 
-Jarvis module to connect to a remote machine via SSH.
+Jarvis module to create a new Dockerfile or docker-compose,yml.
 
 == Overview
 
-The module connects to a remote machine via SSH.
+The module creates a new Dockerfile or docker-compose,yml with basic structure
+and docs prepared.
 
 NOTE: Don't run this script directly! Always run the `jarvis` command and select the module of choice.
 
@@ -32,15 +33,26 @@ jarvis
 
 == Index
 
-* <<_ssh_homelab,ssh_homelab>>
+* <<_newfile,newFile>>
 
-=== ssh_homelab
+=== newFile
 
-Choose a remote host on the homelab to connect via SSH.
+Create a new Dockerfile.
 
 ==== Example
 
 [,bash]
 ----
-ssh_homelab
+newScript
 ----
+
+==== Arguments
+
+* *$1* (string): The path from jarvis.sh to this module (`modules/<MODULE_NAME>`)
+* *$2* (string): The file temlate to use to create a new file (either `Dockerfile` or `docker-compose.yml`)
+
+==== Exit codes
+
+* *8*: If path from jarvis.sh to this module is missing
+* *7*: If file template is missing
+* *4*: If a file of the same name already exists in the current directory
