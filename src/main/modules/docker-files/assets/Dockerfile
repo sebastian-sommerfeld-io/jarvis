@@ -2,7 +2,7 @@
 # @brief ...
 #
 # @description ...
-# todo ... write description
+# todo ... write description and brief (above)
 #
 # == Prerequisites
 #
@@ -25,7 +25,7 @@
 # and testing purposes. The ``:ci`` tag is never meant for production use and may
 # contain experimental features or unresolved issues.
 #
-# == How to Use this Image
+# == How to use this image
 #
 # todo ... at least update the image names below
 #
@@ -39,6 +39,7 @@
 # == See also
 #
 # todo ... list all relevant information and links
+
 
 FROM ubuntu:23.10
 LABEL maintainer="sebastian@sommerfeld.io"
