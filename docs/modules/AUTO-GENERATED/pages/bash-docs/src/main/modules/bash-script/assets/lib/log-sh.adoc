@@ -52,12 +52,12 @@ Logging library module on Github: https://github.com/sebastian-sommerfeld-io/jar
 
 == Index
 
-* <<___date,__date>>
-* <<_log_error,LOG_ERROR>>
-* <<_log_info,LOG_INFO>>
-* <<_log_done,LOG_DONE>>
-* <<_log_warn,LOG_WARN>>
-* <<_log_header,LOG_HEADER>>
+* <<_date,__date>>
+* <<_logerror,LOG_ERROR>>
+* <<_loginfo,LOG_INFO>>
+* <<_logdone,LOG_DONE>>
+* <<_logwarn,LOG_WARN>>
+* <<_logheader,LOG_HEADER>>
 
 === __date
 

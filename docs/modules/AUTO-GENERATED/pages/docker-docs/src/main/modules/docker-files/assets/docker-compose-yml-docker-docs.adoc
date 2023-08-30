@@ -12,14 +12,22 @@
 // Source file = /github/workspace/src/main/modules/docker-files/assets/docker-compose.yml
 
 
-Docker Compose config to ...
+...
 
 == Overview
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+...
+todo ... write description and brief (above)
+
+== Prerequisites
+
+This compose config has been developed and tested with Docker version 24.0.2 on top
+of Ubuntu 22.10.
+
+== How to use
+
+todo ... at least update the image names below
 
 == See also
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-ut labore et dolore magna aliquyam erat, sed diam voluptua.
+todo ... list all relevant information and links
