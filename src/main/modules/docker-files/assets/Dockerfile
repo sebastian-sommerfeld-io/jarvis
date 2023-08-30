@@ -1,22 +1,44 @@
 # @file Dockerfile
-# @brief Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+# @brief ...
 #
-# @description Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-# tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
-#
-# === Example
-#
-# To build and run the image for testng purposes locally use ``docker build -t local/ubuntu:dev .``
-# and ``docker run --rm local/ubuntu:dev``.
+# @description ...
+# todo ... write description
 #
 # == Prerequisites
 #
 # This image has been developed and tested with Docker version 24.0.2 on top of Ubuntu 22.10. 
 #
+# == About the tags and versions
+#
+# This Docker image follows a tagging convention based on semantic versioning. Each
+# stable version of the image is tagged with a specific semantic version (e.g.
+# ``:v0.2.0``), while the ``:latest`` tag always points to the most recent stable
+# version.
+#
+# Unstable versions are marked with a suffix (``-alpha.0``, ``-beta.0`` or ``-rc.0``).
+# These versions usually are used for development or testing purposes. These versions
+# are not recommended for production use. ``:latest`` never points to an unstable
+# pre-release.
+#
+# The image may have a ``:ci`` tag, which represents an unstable build. These versions
+# come from CI builds and/or nightly builds and are useful for continuous integration
+# and testing purposes. The ``:ci`` tag is never meant for production use and may
+# contain experimental features or unresolved issues.
+#
+# == How to Use this Image
+#
+# todo ... at least update the image names below
+#
+# To build and run the image for testing purposes locally use ``docker build -t local/ubuntu:dev .``
+# and ``docker run --rm local/ubuntu:dev``.
+#
+# === Installed Tools
+#
+# todo ... list tools or remove section
+#
 # == See also
 #
-# Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod  tempor invidunt
-# ut labore et dolore magna aliquyam erat, sed diam voluptua. 
+# todo ... list all relevant information and links
 
 FROM ubuntu:23.10
 LABEL maintainer="sebastian@sommerfeld.io"
