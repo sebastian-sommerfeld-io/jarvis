@@ -34,7 +34,7 @@ jarvis
 
 == Index
 
-* <<_ssh_homelab,ssh_homelab>>
+* <<_sshhomelab,ssh_homelab>>
 
 === ssh_homelab
 
