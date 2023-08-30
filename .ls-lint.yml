@@ -30,6 +30,7 @@ ignore:
   - .ls-lint.yml
   - .yamllint.yml
   - .gitpod.yml
+  - .pre-commit-config.yaml
   - src/main/modules/gitpod/assets/.gitpod.yml
   - .idea
   - .git
