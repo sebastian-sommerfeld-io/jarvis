@@ -40,9 +40,10 @@ readonly MODULE_PATH="$1"
 
 readonly OPTION_BLANK="blank-file"
 readonly OPTION_ADR="ADR"
+readonly OPTION_BLOG="blog"
 
 
-# @description ...
+# @description Creates a blank AsciiDoc file with the given filename.
 #
 # @example
 #    createBlankFile
@@ -56,7 +57,8 @@ function createBlankFile() {
 }
 
 
-# @description ...
+# @description Creates an AsciiDoc file which follows the template for Architecture
+# Decision Records with the given filename plus a timestamp.
 #
 # @example
 #    createAdr
@@ -69,8 +71,23 @@ function createAdr() {
   copy template-adr.adoc "adr-$(date '+%Y-%m-%d')-$1"
 }
 
+# @description Creates an AsciiDoc file which follows the template for a blog post
+# with the given filename plus a timestamp.
+#
+# @example
+#    createBlogPost
+function createBlogPost() {
+  if [ -z "$1" ]; then
+    LOG_ERROR "Param missing: filename"
+    LOG_ERROR "exit" && exit 8
+  fi
 
-# @description ...
+  copy template-blog-post.adoc "$(date '+%Y-%m-%d')-$1"
+}
+
+
+# @description Copy a template file to the current working directory with the given
+# filename.
 #
 # @arg $1 string The template that should be copied
 # @arg $2 string The filename for the template
@@ -100,10 +117,11 @@ read -r -p "Filename: " FILENAME
 readonly FILENAME
 
 LOG_INFO "Choose the Asciidoc template"
-select e in "$OPTION_BLANK" "$OPTION_ADR"; do
+select e in "$OPTION_BLANK" "$OPTION_ADR" "$OPTION_BLOG"; do
   case "$e" in
   "$OPTION_BLANK" ) createBlankFile "$FILENAME" ;;
   "$OPTION_ADR" ) createAdr "$FILENAME" ;;
+  "$OPTION_BLOG" ) createBlogPost "$FILENAME" ;;
   esac
   break
 done
