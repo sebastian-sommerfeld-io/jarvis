@@ -1,0 +1,92 @@
+= log.sh
+
+Bash module which provides utility functions for logging.
+
+== Overview
+
+This script is bash module which provides a logging library for Bash scripts. This
+module is part of the link:https://github.com/sebastian-sommerfeld-io/jarvis[Jarvis project]. It
+allows you to log messages with different log levels (debug, info, warning and error).
+
+This module is intended to show log information to user who interacts with the bash command line.
+So all output is written to `stdout`. By default this module does not write to any files. To log
+to files, redirect the output to a file of your choice (`LOG_INFO "Some log line" >> some.log`).
+
+To use the logger library, include the following line in your Bash script:
+[source, bash]
+
+----
+#!/bin/bash
+
+# Some code if needed but make sure to include this module somewhere at the top of your script
+
+# Download and include logging library
+rm -rf /tmp/bash-lib
+mkdir -p /tmp/bash-lib
+curl -sL https://raw.githubusercontent.com/sebastian-sommerfeld-io/jarvis/main/src/main/modules/bash-script/assets/lib/log.sh --output /tmp/bash-lib/log.sh
+source /tmp/bash-lib/log.sh
+----
+
+CAUTION: This script is a module an is not intended to run on its own. Include in script and
+use its functions!
+
+=== Script Arguments
+
+The script does not accept any parameters.
+
+=== See also
+
+Logging library module on Github: https://github.com/sebastian-sommerfeld-io/jarvis/blob/main/src/main/modules/bash-script/assets/lib/log.sh
+
+== Index
+
+* <<_date,__date>>
+* <<_logerror,LOG_ERROR>>
+* <<_loginfo,LOG_INFO>>
+* <<_logdone,LOG_DONE>>
+* <<_logwarn,LOG_WARN>>
+* <<_logheader,LOG_HEADER>>
+
+=== __date
+
+Private function to get the current date (propperly formated) to include in log lines.
+
+=== LOG_ERROR
+
+Log a message with log level = ERROR.
+
+==== Arguments
+
+* *...* (String): The line to print.
+
+=== LOG_INFO
+
+Log a message with log level = INFO.
+
+==== Arguments
+
+* *...* (String): The line to print.
+
+=== LOG_DONE
+
+Log a message with log level = DONE.
+
+==== Arguments
+
+* *...* (String): The line to print.
+
+=== LOG_WARN
+
+Log a message with log level = WARN.
+
+==== Arguments
+
+* *...* (String): The line to print.
+
+=== LOG_HEADER
+
+Print log output in a header-style.
+
+==== Arguments
+
+* *...* (String): The line to print.

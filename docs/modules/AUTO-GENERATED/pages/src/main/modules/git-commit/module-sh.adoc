@@ -1,0 +1,23 @@
+= module.sh
+
+Jarvis module to add files and commit files to git repo.
+
+== Overview
+
+The command prompts for a Jira Issue Key and then prompts for a commit message. The command validates
+the syntax of the Jira Issue Key and then concatenates these inputs into a single commit message. Then `git add *`
+and `git commit -m "<THE_MESSAGE>"` is run.
+
+NOTE: Don't run this script directly! Always run the `jarvis` command and select the module of choice.
+
+=== Script Arguments
+
+* _$1_ (string): The path from jarvis.sh to this module (`modules/<MODULE_NAME>`)
+
+=== Script Example
+
+[source, bash]
+
+----
+jarvis
+----

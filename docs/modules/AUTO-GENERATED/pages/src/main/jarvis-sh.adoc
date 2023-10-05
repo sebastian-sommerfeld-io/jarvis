@@ -1,0 +1,22 @@
+= jarvis.sh
+
+Entrypoint to the jarvis bash utility.
+
+== Overview
+
+The script is the entrypoint to the jarvis bash utility. The scripts provides a select menu
+to choose which module to run.
+
+Something about /opt/jarvis
+
+=== Script Arguments
+
+The script does not accept any parameters.
+
+=== Script Example
+
+[source, bash]
+
+----
+jarvis
+----
