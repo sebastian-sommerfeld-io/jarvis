@@ -6,7 +6,7 @@
 #
 # == Prerequisites
 #
-# This image has been developed and tested with Docker version 24.0.2 on top of Ubuntu 22.10. 
+# This image has been developed and tested with Docker version 24.0.2 on top of Ubuntu 22.10.
 #
 # == About the tags and versions
 #
@@ -20,9 +20,9 @@
 # are not recommended for production use. ``:latest`` never points to an unstable
 # pre-release.
 #
-# The image may have a ``:ci`` tag, which represents an unstable build. These versions
+# The image may have a ``:edge`` tag, which represents an unstable build. These versions
 # come from CI builds and/or nightly builds and are useful for continuous integration
-# and testing purposes. The ``:ci`` tag is never meant for production use and may
+# and testing purposes. The ``:edge`` tag is never meant for production use and may
 # contain experimental features or unresolved issues.
 #
 # == How to use this image
