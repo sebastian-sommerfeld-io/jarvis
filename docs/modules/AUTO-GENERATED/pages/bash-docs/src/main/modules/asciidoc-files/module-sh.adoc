@@ -42,11 +42,12 @@ jarvis
 
 * <<_createblankfile,createBlankFile>>
 * <<_createadr,createAdr>>
+* <<_createblogpost,createBlogPost>>
 * <<_copy,copy>>
 
 === createBlankFile
 
-...
+Creates a blank AsciiDoc file with the given filename.
 
 ==== Example
 
@@ -57,7 +58,8 @@ createBlankFile
 
 === createAdr
 
-...
+Creates an AsciiDoc file which follows the template for Architecture
+Decision Records with the given filename plus a timestamp.
 
 ==== Example
 
@@ -66,9 +68,22 @@ createBlankFile
 createAdr
 ----
 
+=== createBlogPost
+
+Creates an AsciiDoc file which follows the template for a blog post
+with the given filename plus a timestamp.
+
+==== Example
+
+[,bash]
+----
+createBlogPost
+----
+
 === copy
 
-...
+Copy a template file to the current working directory with the given
+filename.
 
 ==== Example
 
