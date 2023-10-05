@@ -1,0 +1,21 @@
+= module.sh
+
+Jarvis module to push files to a remote git repo.
+
+== Overview
+
+Push comitted files to a remote git repo.
+
+NOTE: Don't run this script directly! Always run the `jarvis` command and select the module of choice.
+
+=== Script Arguments
+
+* _$1_ (string): The path from jarvis.sh to this module (`modules/<MODULE_NAME>`)
+
+=== Script Example
+
+[source, bash]
+
+----
+jarvis
+----
