@@ -20,9 +20,9 @@
 # are not recommended for production use. ``:latest`` never points to an unstable
 # pre-release.
 #
-# The image may have a ``:edge`` tag, which represents an unstable build. These versions
+# The image may have a ``:main`` tag, which represents an unstable build. These versions
 # come from CI builds and/or nightly builds and are useful for continuous integration
-# and testing purposes. The ``:edge`` tag is never meant for production use and may
+# and testing purposes. The ``:main`` tag is never meant for production use and may
 # contain experimental features or unresolved issues.
 #
 # == How to use this image
