@@ -32,12 +32,12 @@ contain experimental features or unresolved issues.
 
 todo ... at least update the image names below
 
-To build and run the image for testing purposes locally use `docker build -t local/ubuntu:dev .`
-and `docker run --rm local/ubuntu:dev`.
+[source, bash]
 
-=== Installed Tools
-
-todo ... list tools or remove section
+----
+docker build -t local/ubuntu:dev .
+docker run --rm local/ubuntu:dev``.
+----
 
 == See also
 
