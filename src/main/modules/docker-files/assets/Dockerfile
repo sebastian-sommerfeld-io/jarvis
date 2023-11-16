@@ -29,12 +29,11 @@
 #
 # todo ... at least update the image names below
 #
-# To build and run the image for testing purposes locally use ``docker build -t local/ubuntu:dev .``
-# and ``docker run --rm local/ubuntu:dev``.
-#
-# === Installed Tools
-#
-# todo ... list tools or remove section
+# [source, bash]
+# ```
+# docker build -t local/ubuntu:dev .
+# docker run --rm local/ubuntu:dev``.
+# ```
 #
 # == See also
 #
