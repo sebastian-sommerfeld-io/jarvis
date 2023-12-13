@@ -43,12 +43,12 @@ function ssh_homelab() {
   readonly REMOTE_HOST_CAPRICA="caprica.$FQDN_SUFFIX"
   readonly REMOTE_HOST_KOBOL="kobol.$FQDN_SUFFIX"
   readonly REMOTE_HOST_ACTIONS_RUNNER_01="actions-runner-01.$FQDN_SUFFIX"
-  readonly REMOTE_HOST_UBUNTU_PI="ubuntu-pi.$FQDN_SUFFIX"
+  readonly REMOTE_HOST_RASPI_01="raspi-01.$FQDN_SUFFIX"
 
   local host=""
 
   LOG_INFO "Select host"
-  select h in "$REMOTE_HOST_CAPRICA" "$REMOTE_HOST_KOBOL" "$REMOTE_HOST_ACTIONS_RUNNER_01" "$REMOTE_HOST_UBUNTU_PI"; do
+  select h in "$REMOTE_HOST_CAPRICA" "$REMOTE_HOST_KOBOL" "$REMOTE_HOST_ACTIONS_RUNNER_01" "$REMOTE_HOST_RASPI_01"; do
     host="$h"
     break
   done
