@@ -42,14 +42,13 @@ function ssh_homelab() {
   readonly REMOTE_USER="sebastian"
   readonly REMOTE_HOST_CAPRICA="caprica.$FQDN_SUFFIX"
   readonly REMOTE_HOST_KOBOL="kobol.$FQDN_SUFFIX"
-  readonly REMOTE_HOST_MONITORING="monitoring.$FQDN_SUFFIX"
-  readonly REMOTE_HOST_SUPERVISOR="supervisor.$FQDN_SUFFIX"
-  readonly REMOTE_HOST_OPENAPPSEC="openappsec.$FQDN_SUFFIX"
+  readonly REMOTE_HOST_ACTIONS_RUNNER_01="actions-runner-01.$FQDN_SUFFIX"
+  readonly REMOTE_HOST_UBUNTU_PI="ubuntu-pi.$FQDN_SUFFIX"
 
   local host=""
 
-  LOG_INFO "Select host"  
-  select h in "$REMOTE_HOST_CAPRICA" "$REMOTE_HOST_KOBOL" "$REMOTE_HOST_MONITORING" "$REMOTE_HOST_SUPERVISOR" "$REMOTE_HOST_OPENAPPSEC"; do
+  LOG_INFO "Select host"
+  select h in "$REMOTE_HOST_CAPRICA" "$REMOTE_HOST_KOBOL" "$REMOTE_HOST_ACTIONS_RUNNER_01" "$REMOTE_HOST_UBUNTU_PI"; do
     host="$h"
     break
   done
