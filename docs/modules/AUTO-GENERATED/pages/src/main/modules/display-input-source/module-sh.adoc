@@ -1,0 +1,25 @@
+= module.sh
+
+Jarvis module to push files to a remote git repo.
+
+== Overview
+
+This script switches the display inputs for my Dell monitors to
+avoid having to use the monitors physical buttons.
+
+The script is designed to only work on the `caprica` host and fails if
+another machine runs this script.
+
+NOTE: Don't run this script directly! Always run the `jarvis` command and select the module of choice.
+
+=== Script Arguments
+
+* _$1_ (string): The path from jarvis.sh to this module (`modules/<MODULE_NAME>`)
+
+=== Script Example
+
+[source, bash]
+
+----
+jarvis
+----

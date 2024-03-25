@@ -4,6 +4,7 @@
 * xref:AUTO-GENERATED:src/main/modules/bash-script/assets/template-sh.adoc[src/main/modules/bash-script/assets/template.sh]
 * xref:AUTO-GENERATED:src/main/modules/bash-script/assets/lib/log-sh.adoc[src/main/modules/bash-script/assets/lib/log.sh]
 * xref:AUTO-GENERATED:src/main/modules/git-push/module-sh.adoc[src/main/modules/git-push/module.sh]
+* xref:AUTO-GENERATED:src/main/modules/display-input-source/module-sh.adoc[src/main/modules/display-input-source/module.sh]
 * xref:AUTO-GENERATED:src/main/modules/gitpod/module-sh.adoc[src/main/modules/gitpod/module.sh]
 * xref:AUTO-GENERATED:src/main/modules/antora-init-module-blank/module-sh.adoc[src/main/modules/antora-init-module-blank/module.sh]
 * xref:AUTO-GENERATED:src/main/modules/ssh-create-keypair/module-sh.adoc[src/main/modules/ssh-create-keypair/module.sh]
