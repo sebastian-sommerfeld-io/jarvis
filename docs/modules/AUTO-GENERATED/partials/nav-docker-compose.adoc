@@ -1,1 +1,1 @@
-* xref:AUTO-GENERATED:src/main/modules/docker-files/assets/docker-compose-yml.adoc[src/main/modules/docker-files/assets/docker-compose.yml]
+* xref:AUTO-GENERATED:src/main/modules/source-code-files/assets/docker-compose-yml.adoc[src/main/modules/source-code-files/assets/docker-compose.yml]

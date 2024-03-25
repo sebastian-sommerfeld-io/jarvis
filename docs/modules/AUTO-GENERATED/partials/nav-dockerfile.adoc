@@ -1,1 +1,1 @@
-* xref:AUTO-GENERATED:src/main/modules/docker-files/assets/Dockerfile.adoc[src/main/modules/docker-files/assets/Dockerfile]
+* xref:AUTO-GENERATED:src/main/modules/source-code-files/assets/Dockerfile.adoc[src/main/modules/source-code-files/assets/Dockerfile]
