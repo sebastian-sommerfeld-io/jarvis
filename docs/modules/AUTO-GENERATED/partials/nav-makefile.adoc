@@ -1,0 +1,1 @@
+* xref:AUTO-GENERATED:src/main/modules/source-code-files/assets/Makefile.adoc[src/main/modules/source-code-files/assets/Makefile]

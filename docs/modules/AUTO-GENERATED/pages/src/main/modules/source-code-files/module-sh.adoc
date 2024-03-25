@@ -1,11 +1,11 @@
 = module.sh
 
-Jarvis module to create a new Dockerfile or docker-compose,yml.
+Jarvis module to create a new source code files.
 
 == Overview
 
-The module creates a new Dockerfile or docker-compose,yml with basic structure
-and docs prepared.
+The module creates a new source code file with basic structure and docs prepared.
+As of now, Dockerfile, docker-compose.yml and Makefile are supported. All come with shdoc-style inline docs.
 
 NOTE: Don't run this script directly! Always run the `jarvis` command and select the module of choice.
 
@@ -27,7 +27,7 @@ jarvis
 
 === newFile
 
-Create a new Dockerfile.
+Create a new file based in the given type.
 
 ==== Example
 
@@ -38,11 +38,11 @@ newScript
 
 ==== Arguments
 
-* *$1* (string): The path from jarvis.sh to this module (`modules/<MODULE_NAME>`)
+* *$1* (string): The path from `jarvis.sh` to this module (`modules/<MODULE_NAME>`)
 * *$2* (string): The file temlate to use to create a new file (either `Dockerfile` or `docker-compose.yml`)
 
 ==== Exit codes
 
-* *8*: If path from jarvis.sh to this module is missing
+* *8*: If path from `jarvis.sh` to this module is missing
 * *7*: If file template is missing
 * *4*: If a file of the same name already exists in the current directory
