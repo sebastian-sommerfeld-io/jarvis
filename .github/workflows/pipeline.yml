@@ -59,11 +59,11 @@ jobs:
     name: ${{ matrix.yml-file }}
     if: ${{ (github.actor != 'dependabot[bot]') }}
     needs: ['lint-yaml', 'lint-folders', 'lint-filenames', 'shellcheck']
-    permissions:
-      contents: write
     strategy:
       matrix:
         yml-file: ['docs/antora.yml']
+    permissions:
+      contents: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
